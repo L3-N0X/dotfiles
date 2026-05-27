@@ -115,6 +115,8 @@ make-git-acp-stub() {
 zle -N make-git-acp-stub
 bindkey '^Xa' make-git-acp-stub
 
+bindkey '^Z' undo
+
 # ---- ALIASES ------------------------------------------------
 # Navigation
 alias ..="cd .."

@@ -1,6 +1,9 @@
-.zsh_history
-*.zwc
-.zsh_sessions/
-
+zsh/.zsh_history
+zsh/*.zwc
+zsh/.zsh_sessions/
+zsh/.zcompdump*
 # hyprland runtime files
-.config/hypr/*.bak
+hypr/.config/hypr/*.bak
+
+# gh CLI token
+gh/.config/gh/hosts.yml

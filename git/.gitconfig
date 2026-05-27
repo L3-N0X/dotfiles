@@ -1,0 +1,74 @@
+[user]
+	name = L3-N0X
+	email = leon.goett@web.de
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[init]
+	defaultBranch = main
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[color]
+    ui = auto
+
+[column]
+    ui = auto
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[commit]
+    verbose = true
+
+[help]
+    autocorrect = prompt
+
+[core]
+    excludesfile = ~/.gitignore
+    autocrlf = input
+    fsmonitor = true
+
+[http]
+    postBuffer = 524288000
+
+[alias]
+    acp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+	amend = commit --amend --no-edit
+	acm = "!f() { git add -A && git commit -m \"$@\"; }; f"
+	unstage = reset HEAD --

@@ -1,0 +1,6 @@
+.zsh_history
+*.zwc
+.zsh_sessions/
+
+# hyprland runtime files
+.config/hypr/*.bak

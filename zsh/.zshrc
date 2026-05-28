@@ -44,6 +44,15 @@ unsetopt CORRECT_ALL
 
 eval "$(zoxide init zsh)"
 
+# ---- YAZI --------------------------------------------------
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
+
 # ---- FZF CONFIGURATION --------------------------------------
 # Catppuccin Macchiato Theme & Layout
 local fzf_bg="#24273a"

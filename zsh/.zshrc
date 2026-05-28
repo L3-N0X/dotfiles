@@ -149,6 +149,7 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 alias e='nvim'
+alias cd='z'
 
 # Config Upkeep & Dotfiles
 alias reload="source ~/.zshrc && echo 'Zsh config reloaded successfully!'"

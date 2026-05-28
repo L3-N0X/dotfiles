@@ -1,14 +1,14 @@
 -- This file sources other files in `hyprland` and `custom` folders
 -- You wanna add your stuff in files in `custom`
 
-_G.mainMod     = "SUPER"
-_G.altMod      = "ALT"
+_G.mainMod = "SUPER"
+_G.altMod  = "ALT"
 
-_G.terminal    = "alacritty"
-_G.fileManager = "dolphin"
-_G.menu        = "hyprlauncher"
-_G.browser     = "helium"
-_G.codeEditor  = "code"
+-- _G.terminal    = "alacritty"
+-- _G.fileManager = "dolphin"
+-- _G.menu        = "hyprlauncher"
+-- _G.browser     = "helium"
+-- _G.codeEditor  = "code"
 
 
 require("mainconf/monitors")

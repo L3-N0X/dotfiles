@@ -39,7 +39,7 @@ hl.config({
     },
     general = {
         -- Gaps and border
-        gaps_in = 4,
+        gaps_in = 3,
         gaps_out = 5,
         gaps_workspaces = 50,
 
@@ -49,13 +49,13 @@ hl.config({
             active_border = "rgba(0DB7D455)",
             inactive_border = "rgba(31313600)"
         },
-        resize_on_border = true,
+        resize_on_border = false,
 
         no_focus_fallback = true,
         allow_tearing = true, -- This just allows the `immediate` window rule to work
         snap = {
             enabled = true,
-            window_gap = 4,
+            window_gap = 3,
             monitor_gap = 5,
             respect_gaps = true
         }
@@ -74,8 +74,8 @@ hl.config({
             size = 10,
             passes = 3,
             brightness = 1,
-            noise = 0.05,
-            contrast = 0.89,
+            noise = 0.1,
+            contrast = 0.92,
             vibrancy = 0.5,
             vibrancy_darkness = 0.5,
             popups = false,

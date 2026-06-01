@@ -299,3 +299,9 @@ hl.config({
         force_zero_scaling = true
     }
 })
+
+hl.device({
+    name = "keyboard-passthrough",
+    -- Override the kb_options just for this device
+    kb_options = "caps:ctrl_modifier,altwin:swap_alt_win"
+})

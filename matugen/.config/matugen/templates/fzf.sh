@@ -1,0 +1,12 @@
+export FZF_DEFAULT_OPTS="
+  --layout=reverse
+  --style=minimal
+  --margin=0
+  --padding=0
+  --height=60%
+  --prompt='󰭎 '
+  --pointer='➔'
+  --marker='➔'
+  --color=bg+:-1,bg:-1,spinner:4,hl:2,hl+:2
+  --color=fg:7,header:1,info:5,pointer:2
+  --color=marker:2,fg+:2,prompt:4"

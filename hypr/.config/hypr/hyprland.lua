@@ -10,11 +10,6 @@ _G.altMod  = "ALT"
 -- _G.browser     = "helium"
 -- _G.codeEditor  = "code"
 
-
-require("mainconf/monitors")
-require("mainconf/rules")
-require("mainconf/keybinds")
-
 -- Internal stuff --
 require("hyprland.lib")
 require("hyprland.services")
@@ -57,6 +52,5 @@ end
 -- Shell overrides --
 require("hyprland.shellOverrides.main")
 
-require("mainconf.keybinds")
 require("mainconf.monitors")
 require("mainconf.rules")

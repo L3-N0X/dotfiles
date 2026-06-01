@@ -165,5 +165,9 @@ hl.layer_rule({ match = { namespace = "quickshell:wStartMenu" }, no_anim = true 
 hl.layer_rule({ match = { namespace = "quickshell:wTaskView" }, ignore_alpha = 0 })
 hl.layer_rule({ match = { namespace = "quickshell:wTaskView" }, no_anim = true })
 
+-- vicinae blur
+hl.layer_rule({ match = { namespace = "vicinae" }, blur = true })
+hl.layer_rule({ match = { namespace = "vicinae" }, ignore_alpha = 0.5 })
+
 -- Launchers need to be FAST
 hl.layer_rule({ match = { namespace = "gtk4-layer-shell" }, no_anim = true })

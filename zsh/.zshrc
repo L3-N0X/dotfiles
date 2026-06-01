@@ -35,6 +35,14 @@ export EDITOR=nvim
 export VISUAL=nvim
 export PATH=$PATH:/home/lenox/.spicetify
 
+export JAVA_HOME=/usr/lib/jvm/default
+
+# Android SDK Paths for Arch Linux
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
 # ---- ZSH OPTIONS --------------------------------------------
 unsetopt CORRECT_ALL
 
@@ -251,6 +259,7 @@ alias valac="nvim ~/.config/alacritty/alacritty.toml"
 alias vthem="nvim ~/.tmux.conf"
 alias stow="/usr/bin/stow --dir /home/lenox/dotfiles --target /home/lenox"
 
+alias setjava="sudo archlinux-java set"
 
 # Added by Antigravity CLI installer
 export PATH="/home/lenox/.local/bin:$PATH"

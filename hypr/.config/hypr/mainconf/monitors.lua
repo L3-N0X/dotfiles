@@ -1,6 +1,8 @@
 local monitors = {
-    { output = "eDP-1",                        width = 1920, height = 1080, hz = 144, scale = 1.25 },
-    { output = "desc:AOC 2475W MDMHAJA004705", width = 1920, height = 1080, hz = 60,  scale = 1 },
+    { output = "eDP-1",    width = 1920, height = 1080, hz = 144, scale = 1.25 },
+    { output = "HDMI-A-1", width = 1920, height = 1080, hz = 60,  scale = 1 },
+    -- desc:AOC 2475W MDMHAJA004705
+    -- desc:Ancor Communications Inc ASUS VS247 F8LMTF10236
 }
 
 local offset_x = 0

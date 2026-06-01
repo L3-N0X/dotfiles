@@ -1,0 +1,872 @@
+/* ==========================================================================
+   DARK THEME COLOR REPLACEMENTS (Matugen Dark Palette)
+   ========================================================================== */
+
+.visual-refresh.theme-dark div[class^=item_][class*=addFriend_],
+.visual-refresh.theme-dark div[class^=numberBadge_][style*="background-color: var(--background-feedback-notification);"],
+.visual-refresh.theme-dark div[class^=numberBadge_][style*="background-color: var(--badge-notification-background);"],
+.visual-refresh.theme-dark div[class*=iconBadge_][class*=isCurrentUserConnected_],
+.visual-refresh.theme-dark span[class*=botTag_],
+.visual-refresh.theme-dark span[class^=unreadPill_],
+.visual-refresh.theme-dark div[class^=listItem_] div[class^=wrapper_] [class*=selected_],
+.visual-refresh.theme-dark div[class^=icon_][class*=noIcon_],
+.visual-refresh.theme-dark button[class^=container_]>div[class^=icon_]>svg,
+.visual-refresh.theme-dark div[class^=newBadge_],
+.visual-refresh.theme-dark button[class*=button_][class*=lookFilled_][class*=colorRed_],
+.visual-refresh.theme-dark button[class*=button_][class*=lookFilled_][class*=colorGreen_],
+.visual-refresh.theme-dark button[class*=button_][class*=lookFilled_][class*=colorLink_],
+.visual-refresh.theme-dark button[class*=button_][class*=lookFilled_][class*=colorBrand_],
+.visual-refresh.theme-dark button[class*=colorable_][class*=join_],
+.visual-refresh.theme-dark svg[class^=status_],
+.visual-refresh.theme-dark svg[class^=dots_],
+.visual-refresh.theme-dark div[class*=textBadge_][class*=base_],
+.visual-refresh.theme-dark svg[class^=descriptionIcon_],
+.visual-refresh.theme-dark div[class^=uploadDropModal_],
+.visual-refresh.theme-dark svg[class^=stepIcon_],
+.visual-refresh.theme-dark svg[class^=activeIcon_],
+.visual-refresh.theme-dark div[class*=tooltipBrand_],
+.visual-refresh.theme-dark div[class*=tooltipGreen_],
+.visual-refresh.theme-dark span[class*=planOptionDiscount_],
+.visual-refresh.theme-dark div[class*=memberCount_],
+.visual-refresh.theme-dark svg[class*=flowerStar_]+div[class*=childContainer_],
+.visual-refresh.theme-dark div[class*=streamerModeEnabledBtn_],
+.visual-refresh.theme-dark div[class*=nowPlaying_],
+.visual-refresh.theme-dark div[class^=pageControlContainer_],
+.visual-refresh.theme-dark [class*=notice_][class*=colorBrand_],
+.visual-refresh.theme-dark [class*=colorStreamerMode_],
+.visual-refresh.theme-dark [class*=colorSpotify_],
+.visual-refresh.theme-dark [class*=colorPremium_],
+.visual-refresh.theme-dark [class*=colorPlayStation_],
+.visual-refresh.theme-dark .interactive:hover,
+.visual-refresh .theme-dark div[class^=item_][class*=addFriend_],
+.visual-refresh .theme-dark div[class^=numberBadge_][style*="background-color: var(--background-feedback-notification);"],
+.visual-refresh .theme-dark div[class^=numberBadge_][style*="background-color: var(--badge-notification-background);"],
+.visual-refresh .theme-dark div[class*=iconBadge_][class*=isCurrentUserConnected_],
+.visual-refresh .theme-dark span[class*=botTag_],
+.visual-refresh .theme-dark span[class^=unreadPill_],
+.visual-refresh .theme-dark div[class^=listItem_] div[class^=wrapper_] [class*=selected_],
+.visual-refresh .theme-dark div[class^=icon_][class*=noIcon_],
+.visual-refresh .theme-dark button[class^=container_]>div[class^=icon_]>svg,
+.visual-refresh .theme-dark div[class^=newBadge_],
+.visual-refresh .theme-dark button[class*=button_][class*=lookFilled_][class*=colorRed_],
+.visual-refresh .theme-dark button[class*=button_][class*=lookFilled_][class*=colorGreen_],
+.visual-refresh .theme-dark button[class*=button_][class*=lookFilled_][class*=colorLink_],
+.visual-refresh .theme-dark button[class*=button_][class*=lookFilled_][class*=colorBrand_],
+.visual-refresh .theme-dark button[class*=colorable_][class*=join_],
+.visual-refresh .theme-dark svg[class^=status_],
+.visual-refresh .theme-dark svg[class^=dots_],
+.visual-refresh .theme-dark div[class*=textBadge_][class*=base_],
+.visual-refresh .theme-dark svg[class^=descriptionIcon_],
+.visual-refresh .theme-dark div[class^=uploadDropModal_],
+.visual-refresh .theme-dark svg[class^=stepIcon_],
+.visual-refresh .theme-dark svg[class^=activeIcon_],
+.visual-refresh .theme-dark div[class*=tooltipBrand_],
+.visual-refresh .theme-dark div[class*=tooltipGreen_],
+.visual-refresh .theme-dark span[class*=planOptionDiscount_],
+.visual-refresh .theme-dark div[class*=memberCount_],
+.visual-refresh .theme-dark svg[class*=flowerStar_]+div[class*=childContainer_],
+.visual-refresh .theme-dark div[class*=streamerModeEnabledBtn_],
+.visual-refresh .theme-dark div[class*=nowPlaying_],
+.visual-refresh .theme-dark div[class^=pageControlContainer_],
+.visual-refresh .theme-dark [class*=notice_][class*=colorBrand_],
+.visual-refresh .theme-dark [class*=colorStreamerMode_],
+.visual-refresh .theme-dark [class*=colorSpotify_],
+.visual-refresh .theme-dark [class*=colorPremium_],
+.visual-refresh .theme-dark [class*=colorPlayStation_],
+.visual-refresh .theme-dark .interactive:hover {
+    --white: {{colors.surface_variant.default.hex}};
+    --white-500: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark button[class*=button_][class*=lookFilled_][class*=colorBrand_]:not(:has(>div>div[class*=buttonIcon_])),
+.visual-refresh .theme-dark button[class*=button_][class*=lookFilled_][class*=colorBrand_]:not(:has(>div>div[class*=buttonIcon_])) {
+    color: {{colors.surface_variant.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark button.vc-btn-primary,
+.visual-refresh .theme-dark button.vc-btn-primary {
+    color: {{colors.surface_variant.default.hex}} !important;
+    background-color: {{colors.primary.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark button.vc-btn-primary:hover,
+.visual-refresh .theme-dark button.vc-btn-primary:hover {
+    background-color: {{colors.primary_container.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark button.vc-btn-primary:active,
+.visual-refresh .theme-dark button.vc-btn-primary:active {
+    background-color: {{colors.on_primary_container.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark button[class^=button_][class*=" primary_"],
+.visual-refresh .theme-dark button[class^=button_][class*=" primary_"] {
+    color: {{colors.surface_variant.default.hex}} !important;
+    background-color: {{colors.primary.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark button[class^=button_][class*=" primary_"]:hover,
+.visual-refresh .theme-dark button[class^=button_][class*=" primary_"]:hover {
+    background-color: {{colors.primary_container.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark button[class^=button_][class*=" primary_"]:active,
+.visual-refresh .theme-dark button[class^=button_][class*=" primary_"]:active {
+    background-color: {{colors.on_primary_container.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark button[class*=button_][class*=active_],
+.visual-refresh.theme-dark button.vc-btn-positive,
+.visual-refresh .theme-dark button[class*=button_][class*=active_],
+.visual-refresh .theme-dark button.vc-btn-positive {
+    color: {{colors.surface_variant.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark div[class^=automodText_],
+.visual-refresh .theme-dark div[class^=automodText_] {
+    color: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark div[class^=pinIcon_]>svg>path,
+.visual-refresh .theme-dark div[class^=pinIcon_]>svg>path {
+    fill: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark div[class^=bannerContainer_] [style*="color: white"],
+.visual-refresh.theme-dark div[class^=friendRequestContainer_]>button[class*=colorGreen_] [style*="color: white"],
+.visual-refresh .theme-dark div[class^=bannerContainer_] [style*="color: white"],
+.visual-refresh .theme-dark div[class^=friendRequestContainer_]>button[class*=colorGreen_] [style*="color: white"] {
+    color: {{colors.surface_variant.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark .vcd-screen-picker-option-radio[data-checked=true],
+.visual-refresh .theme-dark .vcd-screen-picker-option-radio[data-checked=true] {
+    --text-default: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark button[class*=selectorButtonSelected_] div[class*=selectorText_],
+.visual-refresh.theme-dark button:hover div[class*=selectorText_],
+.visual-refresh .theme-dark button[class*=selectorButtonSelected_] div[class*=selectorText_],
+.visual-refresh .theme-dark button:hover div[class*=selectorText_] {
+    color: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark svg[class^=selectedIcon_]>circle[fill=white],
+.visual-refresh .theme-dark svg[class^=selectedIcon_]>circle[fill=white] {
+    fill: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark div[class*=textBadge_][class*=base_][style*="background-color: var(--background-accent)"],
+.visual-refresh .theme-dark div[class*=textBadge_][class*=base_][style*="background-color: var(--background-accent)"] {
+    --white: {{colors.on_surface.default.hex}};
+}
+
+.visual-refresh.theme-dark div[class*=winButtonClose_]:hover,
+.visual-refresh .theme-dark div[class*=winButtonClose_]:hover {
+    color: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark div[class^=bar_][class*=unreadMentionsBar_],
+.visual-refresh .theme-dark div[class^=bar_][class*=unreadMentionsBar_] {
+    color: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark,
+.visual-refresh .theme-dark {
+    --brand-500: {{colors.primary.default.hex}} !important;
+    --brand-530: {{colors.primary_container.default.hex}};
+    --brand-560: {{colors.on_primary_container.default.hex}};
+    --brand-600: {{colors.on_primary.default.hex}};
+    --brand-630: {{colors.primary_fixed.default.hex}};
+    --brand-660: {{colors.primary_fixed_dim.default.hex}};
+    --brand-700: {{colors.on_primary_fixed.default.hex}};
+    --brand-730: {{colors.on_primary_fixed_variant.default.hex}};
+    --__header-bar-background: {{colors.surface_container_low.default.hex}} !important;
+    --text-default: {{colors.on_surface.default.hex}};
+    --text-muted: {{colors.on_surface_variant.default.hex}} !important;
+    --text-link: {{colors.primary.default.hex}} !important;
+    --text-brand: {{colors.primary.default.hex}};
+    --text-strong: {{colors.on_surface.default.hex}} !important;
+    --text-subtle: {{colors.outline.default.hex}};
+    --text-feedback-positive: {{colors.tertiary.default.hex}};
+    --text-feedback-critical: {{colors.error.default.hex}};
+    --text-feedback-warning: {{colors.secondary.default.hex}};
+    --text-feedback-info: {{colors.primary.default.hex}};
+    --message-reacted-background-default: color-mix(in srgb, {{colors.primary.default.hex}} 30%, transparent) !important;
+    --message-reacted-text-default: {{colors.primary.default.hex}};
+    --opacity-blurple-8: color-mix(in srgb, {{colors.primary.default.hex}} 8%, transparent);
+    --opacity-blurple-16: color-mix(in srgb, {{colors.primary.default.hex}} 16%, transparent);
+    --opacity-blurple-24: color-mix(in srgb, {{colors.primary.default.hex}} 24%, transparent);
+    --opacity-blurple-32: color-mix(in srgb, {{colors.primary.default.hex}} 32%, transparent);
+    --opacity-blurple-60: color-mix(in srgb, {{colors.primary.default.hex}} 60%, transparent);
+    --blurple-50: {{colors.primary.default.hex}};
+    --blurple-60: {{colors.primary_container.default.hex}};
+    --app-frame-background: {{colors.shadow.default.hex}};
+    --background-secondary-alt: {{colors.surface_container_high.default.hex}} !important;
+    --background-accent: {{colors.surface_variant.default.hex}} !important;
+    --background-surface-highest: {{colors.surface_container_highest.default.hex}} !important;
+    --background-surface-higher: {{colors.surface_container_high.default.hex}} !important;
+    --background-surface-high: {{colors.surface_container.default.hex}} !important;
+    --background-base-lowest: {{colors.surface_dim.default.hex}} !important;
+    --background-base-lower: {{colors.surface_container_low.default.hex}} !important;
+    --background-base-low: {{colors.surface_container_lowest.default.hex}} !important;
+    --bg-surface-raised: {{colors.surface_container_low.default.hex}};
+    --background-gradient-highest: {{colors.surface_container_high.default.hex}};
+    --home-background: {{colors.surface.default.hex}};
+    --chat-background: {{colors.surface.default.hex}};
+    --chat-background-default: {{colors.surface.default.hex}};
+    --chat-border: {{colors.surface_dim.default.hex}};
+    --chat-text-muted: {{colors.on_surface_variant.default.hex}};
+    --checkbox-icon-active: {{colors.surface_dim.default.hex}};
+    --checkbox-border-default: {{colors.outline.default.hex}};
+    --radio-thumb-background-active: {{colors.surface_dim.default.hex}};
+    --border-muted: {{colors.surface_container_high.default.hex}};
+    --border-strong: {{colors.surface_container_low.default.hex}};
+    --border-normal: {{colors.surface_dim.default.hex}};
+    --border-subtle: {{colors.surface.default.hex}} !important;
+    --background-mod-muted: color-mix(in srgb, {{colors.surface_variant.default.hex}} 5%, transparent);
+    --background-mod-normal: color-mix(in srgb, {{colors.surface_variant.default.hex}} 15%, transparent);
+    --background-mod-subtle: color-mix(in srgb, {{colors.surface_variant.default.hex}} 25%, transparent) !important;
+    --background-mod-strong: color-mix(in srgb, {{colors.surface_variant.default.hex}} 45%, transparent) !important;
+    --custom-channel-members-bg: {{colors.surface_container_low.default.hex}};
+    --custom-status-bubble-background: {{colors.surface_dim.default.hex}} !important;
+    --custom-status-bubble-background-color: {{colors.surface_container_low.default.hex}} !important;
+    --card-background-default: {{colors.surface_container_high.default.hex}} !important;
+    --background-feedback-positive: color-mix(in srgb, {{colors.tertiary.default.hex}} 15%, transparent);
+    --icon-feedback-positive: {{colors.tertiary.default.hex}};
+    --background-feedback-warning: color-mix(in srgb, {{colors.secondary.default.hex}} 15%, transparent);
+    --icon-feedback-warning: {{colors.secondary.default.hex}};
+    --background-feedback-critical: color-mix(in srgb, {{colors.error.default.hex}} 15%, transparent);
+    --icon-feedback-critical: {{colors.error.default.hex}};
+    --background-feedback-info: color-mix(in srgb, {{colors.primary_container.default.hex}} 15%, transparent);
+    --icon-feedback-info: {{colors.primary_container.default.hex}};
+    --background-feedback-notification: {{colors.error.default.hex}};
+    --icon-feedback-notification: {{colors.error.default.hex}};
+    --badge-notification-background: {{colors.error.default.hex}};
+    --status-positive: {{colors.tertiary.default.hex}};
+    --status-positive-background: {{colors.tertiary.default.hex}};
+    --status-positive-text: {{colors.surface.default.hex}};
+    --status-warning: {{colors.secondary.default.hex}};
+    --status-warning-background: {{colors.secondary.default.hex}};
+    --status-warning-text: {{colors.surface.default.hex}};
+    --status-danger: {{colors.error.default.hex}};
+    --black-500: {{colors.surface_dim.default.hex}};
+    --green-360: {{colors.tertiary.default.hex}};
+    --green-300: {{colors.tertiary.default.hex}};
+    --yellow-360: {{colors.secondary.default.hex}};
+    --yellow-300: {{colors.secondary.default.hex}};
+    --red-400: {{colors.error.default.hex}};
+    --red-430: {{colors.error_container.default.hex}};
+    --red-500: {{colors.on_error_container.default.hex}};
+    --blue-500: {{colors.primary_container.default.hex}};
+    --blue-530: {{colors.primary.default.hex}};
+    --primary-100: {{colors.on_surface.default.hex}};
+    --primary-200: {{colors.on_surface_variant.default.hex}};
+    --primary-300: {{colors.on_surface.default.hex}};
+    --primary-400: {{colors.on_surface.default.hex}};
+    --primary-630: {{colors.surface_container_high.default.hex}};
+    --primary-700: {{colors.surface_variant.default.hex}};
+    --primary-800: {{colors.surface_dim.default.hex}};
+    --white: {{colors.on_surface.default.hex}};
+    --white-500: {{colors.on_surface.default.hex}};
+    --guild-boosting-pink: {{colors.inverse_primary.default.hex}};
+    --guild-boosting-blue: {{colors.primary.default.hex}};
+    --guild-boosting-purple: {{colors.primary.default.hex}};
+    --premium-perk-yellow: {{colors.secondary.default.hex}};
+    --premium-perk-purple: {{colors.primary.default.hex}};
+    --premium-perk-dark-blue: {{colors.primary_container.default.hex}};
+    --premium-perk-light-blue: {{colors.primary_fixed_dim.default.hex}};
+    --premium-perk-blue: {{colors.primary.default.hex}};
+    --premium-perk-green: {{colors.tertiary.default.hex}};
+    --premium-perk-pink: {{colors.inverse_primary.default.hex}};
+    --premium-perk-orange: {{colors.secondary.default.hex}};
+    --premium-tier-0-blue: {{colors.primary.default.hex}};
+    --premium-tier-0-purple: {{colors.primary.default.hex}};
+    --premium-tier-1-blue-for-gradients: {{colors.primary_container.default.hex}};
+    --premium-tier-1-dark-blue-for-gradients: {{colors.primary.default.hex}};
+    --premium-tier-2-purple-for-gradients: {{colors.primary.default.hex}};
+    --premium-tier-2-purple-for-gradients-2: {{colors.primary.default.hex}};
+    --premium-tier-2-pink-for-gradients: {{colors.inverse_primary.default.hex}};
+    --control-primary-background-default: {{colors.primary.default.hex}};
+    --control-primary-background-hover: {{colors.primary_container.default.hex}};
+    --control-primary-background-active: {{colors.on_primary_container.default.hex}};
+    --control-secondary-background-default: {{colors.surface_variant.default.hex}} !important;
+    --control-secondary-background-hover: color-mix(in srgb, {{colors.surface_variant.default.hex}} 90%, white);
+    --control-secondary-background-active: color-mix(in srgb, {{colors.surface_variant.default.hex}} 80%, white);
+    --control-secondary-border-default: {{colors.surface_container_high.default.hex}};
+    --control-secondary-text-default: {{colors.on_surface.default.hex}} !important;
+    --control-secondary-text-hover: {{colors.on_surface.default.hex}};
+    --control-critical-primary-background-default: {{colors.error.default.hex}};
+    --control-critical-primary-background-hover: {{colors.error_container.default.hex}};
+    --control-critical-primary-background-active: {{colors.on_error_container.default.hex}};
+    --control-critical-primary-text-default: {{colors.surface.default.hex}};
+    --control-critical-primary-text-hover: {{colors.surface.default.hex}};
+    --control-critical-secondary-background-default: transparent;--control-critical-secondary-background-hover: color-mix(in srgb, {{colors.error.default.hex}} 15%, transparent);
+    --control-critical-secondary-background-active: color-mix(in srgb, {{colors.error.default.hex}} 25%, transparent);
+    --control-critical-secondary-border-default: {{colors.error.default.hex}};
+    --control-critical-secondary-border-hover: {{colors.error.default.hex}};
+    --control-critical-secondary-border-active: {{colors.error.default.hex}};
+    --control-critical-secondary-text-default: {{colors.on_surface.default.hex}};
+    --control-critical-secondary-text-hover: {{colors.surface.default.hex}};
+    --control-critical-secondary-text-active: {{colors.surface.default.hex}};
+    --control-connected-background-default: {{colors.tertiary.default.hex}};
+    --control-connected-background-hover: {{colors.tertiary_container.default.hex}};
+    --control-connected-background-active: {{colors.on_tertiary_container.default.hex}};
+    --control-connected-border-default: {{colors.tertiary.default.hex}};
+    --control-connected-border-hover: {{colors.tertiary.default.hex}};
+    --control-connected-border-active: {{colors.tertiary.default.hex}};
+    --button-outline-primary-text: {{colors.on_surface.default.hex}};
+    --button-outline-brand-text: {{colors.on_surface.default.hex}};
+    --button-outline-brand-background-hover: {{colors.primary_container.default.hex}};
+    --button-outline-brand-border-active: {{colors.primary_container.default.hex}};
+    --modal-background: {{colors.surface.default.hex}} !important;
+    --modal-footer-background: {{colors.surface.default.hex}};
+    --scrollbar-thin-thumb: {{colors.primary.default.hex}};
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-thumb: {{colors.primary.default.hex}};
+    --scrollbar-auto-track: {{colors.surface_dim.default.hex}};
+    --scrollbar-auto-scrollbar-color-thumb: {{colors.primary.default.hex}};
+    --scrollbar-auto-scrollbar-color-track: {{colors.surface_dim.default.hex}};
+    --input-background-default: {{colors.surface_dim.default.hex}};
+    --input-text-default: {{colors.on_surface.default.hex}};
+    --input-placeholder-text-default: {{colors.on_surface_variant.default.hex}};
+    --input-border-default: {{colors.outline.default.hex}};
+    --logo-primary: {{colors.on_surface.default.hex}};
+    --control-brand-foreground: {{colors.primary.default.hex}};
+    --control-brand-foreground-new: {{colors.primary.default.hex}};
+    --mention-foreground: {{colors.primary.default.hex}};
+    --mention-background: color-mix(in srgb, {{colors.primary.default.hex}} 30%, transparent);
+    --message-mentioned-background-default: color-mix(in srgb, {{colors.secondary.default.hex}} 10%, transparent);
+    --message-mentioned-background-hover: color-mix(in srgb, {{colors.secondary.default.hex}} 8%, transparent);
+    --message-background-hover: color-mix(in srgb, {{colors.surface_dim.default.hex}} 30%, transparent) !important;
+    --message-automod-background-default: color-mix(in srgb, {{colors.error.default.hex}} 5%, transparent);
+    --message-automod-background-hover: color-mix(in srgb, {{colors.error.default.hex}} 10%, transparent);
+    --message-highlight-background-default: color-mix(in srgb, {{colors.primary.default.hex}} 8%, transparent);
+    --message-highlight-background-hover: color-mix(in srgb, {{colors.primary.default.hex}} 6%, transparent);
+    --background-code: {{colors.surface.default.hex}};
+    --channels-default: {{colors.on_surface_variant.default.hex}} !important;
+    --channel-icon: {{colors.on_surface_variant.default.hex}} !important;
+    --channel-text-area-placeholder: color-mix(in srgb, {{colors.on_surface.default.hex}} 50%, transparent);
+    --channeltextarea-background: {{colors.surface_container_low.default.hex}};
+    --icon-muted: {{colors.on_surface_variant.default.hex}} !important;
+    --icon-voice-muted: {{colors.error.default.hex}};
+    --icon-default: {{colors.on_surface.default.hex}};
+    --icon-strong: {{colors.on_surface.default.hex}};
+    --icon-subtle: {{colors.outline.default.hex}};
+    --textbox-markdown-syntax: {{colors.outline.default.hex}};
+    --spoiler-revealed-background: {{colors.surface_container_high.default.hex}};
+    --spoiler-hidden-background: {{colors.surface_variant.default.hex}};
+    --__adaptive-focus-ring-color: {{colors.primary.default.hex}};
+    --interactive-icon-default: {{colors.on_surface.default.hex}} !important;
+    --interactive-icon-hover: {{colors.on_surface.default.hex}};
+    --interactive-icon-active: {{colors.on_surface.default.hex}};
+    --interactive-text-default: {{colors.on_surface.default.hex}} !important;
+    --interactive-text-hover: {{colors.on_surface.default.hex}};
+    --interactive-text-active: {{colors.on_surface.default.hex}};
+    --interactive-muted: {{colors.outline.default.hex}};
+    --interactive-background-hover: color-mix(in srgb, {{colors.on_surface_variant.default.hex}} 15%, transparent);
+    --interactive-background-selected: color-mix(in srgb, {{colors.outline.default.hex}} 20%, transparent);
+    --interactive-background-active: color-mix(in srgb, {{colors.on_surface.default.hex}} 17%, transparent);
+    --__spoiler-background-color--hidden: {{colors.surface_variant.default.hex}};
+    --__spoiler-warning-background-color: {{colors.surface_variant.default.hex}};
+    --user-profile-overlay-background: {{colors.surface_container_low.default.hex}};
+    --user-profile-overlay-background-hover: {{colors.surface_container_high.default.hex}};
+    --plum-23: {{colors.surface.default.hex}};
+    --badge-text-brand: {{colors.surface.default.hex}};
+    --text-status-online: {{colors.tertiary.default.hex}};
+    --text-status-idle: {{colors.secondary.default.hex}};
+    --text-status-dnd: {{colors.error.default.hex}};
+    --text-status-offline: {{colors.outline.default.hex}};
+    --icon-status-online: {{colors.tertiary.default.hex}};
+    --icon-status-idle: {{colors.secondary.default.hex}};
+    --icon-status-dnd: {{colors.error.default.hex}};
+    --icon-status-offline: {{colors.outline.default.hex}};
+    --twitch: {{colors.primary.default.hex}};
+    --playstation: {{colors.primary_container.default.hex}};
+    --spotify: {{colors.tertiary.default.hex}};
+    --notice-background-critical: {{colors.error.default.hex}};
+    --notice-background-info: {{colors.primary.default.hex}};
+    --notice-background-positive: {{colors.tertiary.default.hex}};
+    --notice-background-warning: {{colors.secondary.default.hex}};
+    --notice-text-critical: {{colors.surface_dim.default.hex}};
+    --notice-text-info: {{colors.surface_dim.default.hex}};
+    --notice-text-positive: {{colors.surface_dim.default.hex}};
+    --notice-text-warning: {{colors.surface_dim.default.hex}};
+}
+
+.visual-refresh.theme-dark ::selection,
+.visual-refresh .theme-dark ::selection {
+    background-color: color-mix(in srgb, {{colors.primary.default.hex}} 60%, transparent);
+}
+
+.visual-refresh.theme-dark div[class^=newMessagesBar_],
+.visual-refresh .theme-dark div[class^=newMessagesBar_] {
+    --white: {{colors.surface_dim.default.hex}};
+}
+
+.visual-refresh.theme-dark span[class^=folderGroupBackground_],
+.visual-refresh .theme-dark span[class^=folderGroupBackground_] {
+    --background-mod-subtle: {{colors.surface_container_low.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark label[class^=container_]>div[data-mana-component=switch],
+.visual-refresh .theme-dark label[class^=container_]>div[data-mana-component=switch] {
+    background-color: {{colors.surface_variant.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark label[class^=container_]>div[data-mana-component=switch]:hover,
+.visual-refresh .theme-dark label[class^=container_]>div[data-mana-component=switch]:hover {
+    background-color: {{colors.surface_container_high.default.hex}} !important;
+}
+
+.visual-refresh.theme-dark label[class^=container_]>div[data-mana-component=switch]:has(+span>input:checked)>svg>rect,
+.visual-refresh .theme-dark label[class^=container_]>div[data-mana-component=switch]:has(+span>input:checked)>svg>rect {
+    fill: {{colors.surface_dim.default.hex}};
+}
+
+.visual-refresh.theme-dark div.vc-switch-container,
+.visual-refresh .theme-dark div.vc-switch-container {
+    --primary-400: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-dark div.vc-switch-container.vc-switch-checked>svg.vc-switch-slider>rect,
+.visual-refresh .theme-dark div.vc-switch-container.vc-switch-checked>svg.vc-switch-slider>rect {
+    fill: {{colors.surface_dim.default.hex}};
+}
+
+.visual-refresh.theme-dark div[class^=overlay_][class*=darkThemeGradient_],
+.visual-refresh .theme-dark div[class^=overlay_][class*=darkThemeGradient_] {
+    background: linear-gradient(0deg, {{colors.surface.default.hex}} 0, color-mix(in srgb, {{colors.surface_container.default.hex}} 50%, transparent) 50%, color-mix(in srgb, {{colors.surface_variant.default.hex}} 0%, transparent));
+}
+
+.visual-refresh.theme-dark div[class^=textContentFooter_],
+.visual-refresh .theme-dark div[class^=textContentFooter_] {
+    background: linear-gradient(0deg, {{colors.surface.default.hex}}, color-mix(in srgb, {{colors.surface_container.default.hex}} 97%, transparent) 36px, color-mix(in srgb, {{colors.surface_variant.default.hex}} 40%, transparent)) !important;
+}
+
+.visual-refresh.theme-dark div[class^=textContentFooter_] [class*=tagPill_],
+.visual-refresh .theme-dark div[class^=textContentFooter_] [class*=tagPill_] {
+    background-color: color-mix(in srgb, {{colors.surface_variant.default.hex}} 90%, transparent);
+}
+
+.visual-refresh.theme-dark [class*=greenGlow_],
+.visual-refresh .theme-dark [class*=greenGlow_] {
+    background: color-mix(in srgb, {{colors.tertiary.default.hex}} 10%, transparent);
+}
+
+.visual-refresh.theme-dark [class*=greenGlow_]:hover,
+.visual-refresh .theme-dark [class*=greenGlow_]:hover {
+    background: color-mix(in srgb, {{colors.tertiary.default.hex}} 20%, transparent);
+}
+
+.visual-refresh.theme-dark [class*=redGlow_],
+.visual-refresh .theme-dark [class*=redGlow_] {
+    background: color-mix(in srgb, {{colors.error.default.hex}} 10%, transparent);
+}
+
+.visual-refresh.theme-dark [class*=redGlow_]:hover,
+.visual-refresh .theme-dark [class*=redGlow_]:hover {
+    background: color-mix(in srgb, {{colors.error.default.hex}} 20%, transparent) !important;
+}
+
+.visual-refresh.theme-dark button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_],
+.visual-refresh .theme-dark button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_] {
+    background-color: color-mix(in srgb, {{colors.tertiary.default.hex}} 10%, transparent);
+    border: 1px solid color-mix(in srgb, {{colors.tertiary.default.hex}} 10%, transparent);
+}
+
+.visual-refresh.theme-dark button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_]:hover,
+.visual-refresh .theme-dark button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_]:hover {
+    background-color: color-mix(in srgb, {{colors.tertiary.default.hex}} 20%, transparent);
+}
+
+.visual-refresh.theme-dark .hljs,
+.visual-refresh .theme-dark .hljs {
+    color: {{colors.on_surface.default.hex}};
+    background: {{colors.surface.default.hex}};
+}
+
+/* Code Highlight Tokens matched with Matugen equivalents */
+.visual-refresh.theme-dark .hljs-keyword, .visual-refresh .theme-dark .hljs-keyword { color: {{colors.primary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-built_in, .visual-refresh .theme-dark .hljs-built_in { color: {{colors.error.default.hex}}; }
+.visual-refresh.theme-dark .hljs-type, .visual-refresh .theme-dark .hljs-type { color: {{colors.secondary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-literal, .visual-refresh .theme-dark .hljs-literal { color: {{colors.secondary_container.default.hex}}; }
+.visual-refresh.theme-dark .hljs-number, .visual-refresh .theme-dark .hljs-number { color: {{colors.secondary_container.default.hex}}; }
+.visual-refresh.theme-dark .hljs-operator, .visual-refresh .theme-dark .hljs-operator { color: {{colors.primary_container.default.hex}}; }
+.visual-refresh.theme-dark .hljs-punctuation, .visual-refresh .theme-dark .hljs-punctuation { color: {{colors.outline.default.hex}}; }
+.visual-refresh.theme-dark .hljs-property, .visual-refresh .theme-dark .hljs-property { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-regexp, .visual-refresh .theme-dark .hljs-regexp { color: {{colors.inverse_primary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-string, .visual-refresh .theme-dark .hljs-string { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-char.escape_, .visual-refresh .theme-dark .hljs-char.escape_ { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-subst, .visual-refresh .theme-dark .hljs-subst { color: {{colors.on_surface_variant.default.hex}}; }
+.visual-refresh.theme-dark .hljs-symbol, .visual-refresh .theme-dark .hljs-symbol { color: {{colors.outline_variant.default.hex}}; }
+.visual-refresh.theme-dark .hljs-variable, .visual-refresh .theme-dark .hljs-variable { color: {{colors.primary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-variable.language_, .visual-refresh .theme-dark .hljs-variable.language_ { color: {{colors.primary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-variable.constant_, .visual-refresh .theme-dark .hljs-variable.constant_ { color: {{colors.secondary_container.default.hex}}; }
+.visual-refresh.theme-dark .hljs-title, .visual-refresh .theme-dark .hljs-title { color: {{colors.primary_fixed_dim.default.hex}}; }
+.visual-refresh.theme-dark .hljs-title.class_, .visual-refresh .theme-dark .hljs-title.class_ { color: {{colors.secondary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-title.function_, .visual-refresh .theme-dark .hljs-title.function_ { color: {{colors.primary_fixed_dim.default.hex}}; }
+.visual-refresh.theme-dark .hljs-params, .visual-refresh .theme-dark .hljs-params { color: {{colors.on_surface.default.hex}}; }
+.visual-refresh.theme-dark .hljs-comment, .visual-refresh .theme-dark .hljs-comment { color: {{colors.outline.default.hex}}; }
+.visual-refresh.theme-dark .hljs-doctag, .visual-refresh .theme-dark .hljs-doctag { color: {{colors.error.default.hex}}; }
+.visual-refresh.theme-dark .hljs-meta, .visual-refresh .theme-dark .hljs-meta { color: {{colors.secondary_container.default.hex}}; }
+.visual-refresh.theme-dark .hljs-section, .visual-refresh .theme-dark .hljs-section { color: {{colors.primary_fixed_dim.default.hex}}; }
+.visual-refresh.theme-dark .hljs-tag, .visual-refresh .theme-dark .hljs-tag { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-name, .visual-refresh .theme-dark .hljs-name { color: {{colors.primary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-attr, .visual-refresh .theme-dark .hljs-attr { color: {{colors.primary_fixed_dim.default.hex}}; }
+.visual-refresh.theme-dark .hljs-attribute, .visual-refresh .theme-dark .hljs-attribute { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-bullet, .visual-refresh .theme-dark .hljs-bullet { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-code, .visual-refresh .theme-dark .hljs-code { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-emphasis, .visual-refresh .theme-dark .hljs-emphasis { color: {{colors.error.default.hex}}; }
+.visual-refresh.theme-dark .hljs-strong, .visual-refresh .theme-dark .hljs-strong { color: {{colors.error.default.hex}}; }
+.visual-refresh.theme-dark .hljs-formula, .visual-refresh .theme-dark .hljs-formula { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-link, .visual-refresh .theme-dark .hljs-link { color: {{colors.primary_container.default.hex}}; }
+.visual-refresh.theme-dark .hljs-quote, .visual-refresh .theme-dark .hljs-quote { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-selector-tag, .visual-refresh .theme-dark .hljs-selector-tag { color: {{colors.secondary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-selector-id, .visual-refresh .theme-dark .hljs-selector-id { color: {{colors.primary_fixed_dim.default.hex}}; }
+.visual-refresh.theme-dark .hljs-selector-class, .visual-refresh .theme-dark .hljs-selector-class { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-selector-attr, .visual-refresh .theme-dark .hljs-selector-attr { color: {{colors.primary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-selector-pseudo, .visual-refresh .theme-dark .hljs-selector-pseudo { color: {{colors.tertiary.default.hex}}; }
+.visual-refresh.theme-dark .hljs-template-tag, .visual-refresh .theme-dark .hljs-template-tag { color: {{colors.outline_variant.default.hex}}; }
+.visual-refresh.theme-dark .hljs-template-variable, .visual-refresh .theme-dark .hljs-template-variable { color: {{colors.outline_variant.default.hex}}; }
+.visual-refresh.theme-dark .hljs-addition, .visual-refresh .theme-dark .hljs-addition { color: {{colors.tertiary.default.hex}}; background: color-mix(in srgb, {{colors.tertiary.default.hex}} 15%, transparent); }
+.visual-refresh.theme-dark .hljs-deletion, .visual-refresh .theme-dark .hljs-deletion { color: {{colors.error.default.hex}}; background: color-mix(in srgb, {{colors.error.default.hex}} 15%, transparent); }
+
+
+/* ==========================================================================
+   LIGHT THEME COLOR REPLACEMENTS (Matugen Light Palette)
+   ========================================================================== */
+
+.visual-refresh.theme-light,
+.visual-refresh .theme-light {
+    /* Base background mapping override */
+    --white: {{colors.surface_container_lowest.default.hex}} !important;
+    --white-500: {{colors.surface_container_lowest.default.hex}} !important;
+    --black-500: {{colors.on_surface.default.hex}} !important;
+}
+
+.visual-refresh.theme-light div[class*=tooltipGrey_],
+.visual-refresh .theme-light div[class*=tooltipGrey_]{
+    --white-500: {{colors.on_surface.default.hex}};
+    --white: {{colors.on_surface.default.hex}};
+}
+
+.visual-refresh.theme-light,
+.visual-refresh .theme-light {
+    --brand-500: {{colors.primary.default.hex}} !important;
+    --brand-530: {{colors.primary_container.default.hex}};
+    --brand-560: {{colors.on_primary_container.default.hex}};
+    --brand-600: {{colors.on_primary.default.hex}};
+    --brand-630: {{colors.primary_fixed.default.hex}};
+    --brand-660: {{colors.primary_fixed_dim.default.hex}};
+    --brand-700: {{colors.on_primary_fixed.default.hex}};
+    --brand-730: {{colors.on_primary_fixed_variant.default.hex}};
+    --__header-bar-background: {{colors.surface_container_low.default.hex}} !important;
+    --text-default: {{colors.on_surface.default.hex}};
+    --text-muted: {{colors.on_surface_variant.default.hex}} !important;
+    --text-link: {{colors.primary.default.hex}} !important;
+    --text-brand: {{colors.primary.default.hex}};
+    --text-strong: {{colors.on_surface.default.hex}} !important;
+    --text-subtle: {{colors.outline.default.hex}};
+    --text-feedback-positive: {{colors.tertiary.default.hex}};
+    --text-feedback-critical: {{colors.error.default.hex}};
+    --text-feedback-warning: {{colors.secondary.default.hex}};
+    --text-feedback-info: {{colors.primary.default.hex}};
+    --message-reacted-background-default: color-mix(in srgb, {{colors.primary.default.hex}} 30%, transparent) !important;
+    --message-reacted-text-default: {{colors.primary.default.hex}};
+    --opacity-blurple-8: color-mix(in srgb, {{colors.primary.default.hex}} 8%, transparent);
+    --opacity-blurple-16: color-mix(in srgb, {{colors.primary.default.hex}} 16%, transparent);
+    --opacity-blurple-24: color-mix(in srgb, {{colors.primary.default.hex}} 24%, transparent);
+    --opacity-blurple-32: color-mix(in srgb, {{colors.primary.default.hex}} 32%, transparent);
+    --opacity-blurple-60: color-mix(in srgb, {{colors.primary.default.hex}} 60%, transparent);
+    --blurple-50: {{colors.primary.default.hex}};
+    --blurple-60: {{colors.on_primary_container.default.hex}};
+    --app-frame-background: {{colors.surface_variant.default.hex}};
+    --background-secondary-alt: {{colors.surface_container_high.default.hex}} !important;
+    --background-accent: {{colors.outline_variant.default.hex}} !important;
+    --background-surface-highest: {{colors.surface_container_highest.default.hex}} !important;
+    --background-surface-higher: {{colors.surface_container_high.default.hex}} !important;
+    --background-surface-high: {{colors.surface_container.default.hex}} !important;
+    --background-base-lowest: {{colors.surface_container_lowest.default.hex}} !important;
+    --background-base-lower: {{colors.surface_container_low.default.hex}} !important;
+    --background-base-low: {{colors.surface_container_high.default.hex}} !important;
+    --bg-surface-raised: {{colors.surface_container_low.default.hex}};
+    --background-gradient-highest: {{colors.surface_container_high.default.hex}};
+    --home-background: {{colors.surface.default.hex}};
+    --chat-background: {{colors.surface.default.hex}};
+    --chat-background-default: {{colors.surface.default.hex}};
+    --chat-border: {{colors.surface_container_lowest.default.hex}};
+    --chat-text-muted: {{colors.on_surface_variant.default.hex}};
+    --checkbox-icon-active: {{colors.surface_container_lowest.default.hex}};
+    --checkbox-border-default: {{colors.outline.default.hex}};
+    --radio-thumb-background-active: {{colors.surface_container_lowest.default.hex}};
+    --border-muted: {{colors.surface_container_highest.default.hex}};
+    --border-strong: {{colors.surface_container_low.default.hex}};
+    --border-normal: {{colors.surface_container_lowest.default.hex}};
+    --border-subtle: {{colors.surface.default.hex}} !important;
+    --background-mod-muted: color-mix(in srgb, {{colors.outline_variant.default.hex}} 5%, transparent);
+    --background-mod-normal: color-mix(in srgb, {{colors.outline_variant.default.hex}} 15%, transparent);
+    --background-mod-subtle: color-mix(in srgb, {{colors.outline_variant.default.hex}} 25%, transparent) !important;
+    --background-mod-strong: color-mix(in srgb, {{colors.outline_variant.default.hex}} 45%, transparent) !important;
+    --custom-channel-members-bg: {{colors.surface_container_low.default.hex}};
+    --custom-status-bubble-background: {{colors.surface_container_lowest.default.hex}} !important;
+    --custom-status-bubble-background-color: {{colors.surface_container_low.default.hex}} !important;
+    --card-background-default: {{colors.surface_container_highest.default.hex}} !important;
+    --background-feedback-positive: color-mix(in srgb, {{colors.tertiary.default.hex}} 15%, transparent);
+    --icon-feedback-positive: {{colors.tertiary.default.hex}};
+    --background-feedback-warning: color-mix(in srgb, {{colors.secondary.default.hex}} 15%, transparent);
+    --icon-feedback-warning: {{colors.secondary.default.hex}};
+    --background-feedback-critical: color-mix(in srgb, {{colors.error.default.hex}} 15%, transparent);
+    --icon-feedback-critical: {{colors.error.default.hex}};
+    --background-feedback-info: color-mix(in srgb, {{colors.primary_container.default.hex}} 15%, transparent);
+    --icon-feedback-info: {{colors.primary_container.default.hex}};
+    --background-feedback-notification: {{colors.error.default.hex}};
+    --icon-feedback-notification: {{colors.error.default.hex}};
+    --badge-notification-background: {{colors.error.default.hex}};
+    --status-positive: {{colors.tertiary.default.hex}};
+    --status-positive-background: {{colors.tertiary.default.hex}};
+    --status-positive-text: {{colors.surface.default.hex}};
+    --status-warning: {{colors.secondary.default.hex}};
+    --status-warning-background: {{colors.secondary.default.hex}};
+    --status-warning-text: {{colors.surface.default.hex}};
+    --status-danger: {{colors.error.default.hex}};
+    --black-500: {{colors.surface_container_lowest.default.hex}};
+    --green-360: {{colors.tertiary.default.hex}};
+    --green-300: {{colors.tertiary.default.hex}};
+    --yellow-360: {{colors.secondary.default.hex}};
+    --yellow-300: {{colors.secondary.default.hex}};
+    --red-400: {{colors.error.default.hex}};
+    --red-430: {{colors.error_container.default.hex}};
+    --red-500: {{colors.on_error_container.default.hex}};
+    --blue-500: {{colors.on_primary_container.default.hex}};
+    --blue-530: {{colors.on_primary.default.hex}};
+    --primary-100: {{colors.outline.default.hex}};
+    --primary-200: {{colors.on_surface_variant.default.hex}};
+    --primary-300: {{colors.outline.default.hex}};
+    --primary-400: {{colors.outline.default.hex}};
+    --primary-630: {{colors.surface_container_highest.default.hex}};
+    --primary-700: {{colors.outline_variant.default.hex}};
+    --primary-800: {{colors.surface_container_lowest.default.hex}};
+    --white: {{colors.on_surface.default.hex}};
+    --white-500: {{colors.on_surface.default.hex}};
+    --guild-boosting-pink: {{colors.inverse_primary.default.hex}};
+    --guild-boosting-blue: {{colors.primary.default.hex}};
+    --guild-boosting-purple: {{colors.primary.default.hex}};
+    --premium-perk-yellow: {{colors.secondary.default.hex}};
+    --premium-perk-purple: {{colors.primary.default.hex}};
+    --premium-perk-dark-blue: {{colors.on_primary_container.default.hex}};
+    --premium-perk-light-blue: {{colors.primary_fixed_dim.default.hex}};
+    --premium-perk-blue: {{colors.primary.default.hex}};
+    --premium-perk-green: {{colors.tertiary.default.hex}};
+    --premium-perk-pink: {{colors.inverse_primary.default.hex}};
+    --premium-perk-orange: {{colors.secondary.default.hex}};
+    --premium-tier-0-blue: {{colors.primary.default.hex}};
+    --premium-tier-0-purple: {{colors.primary.default.hex}};
+    --premium-tier-1-blue-for-gradients: {{colors.primary_container.default.hex}};
+    --premium-tier-1-dark-blue-for-gradients: {{colors.primary.default.hex}};
+    --premium-tier-2-purple-for-gradients: {{colors.primary.default.hex}};
+    --premium-tier-2-purple-for-gradients-2: {{colors.primary.default.hex}};
+    --premium-tier-2-pink-for-gradients: {{colors.inverse_primary.default.hex}};
+    --control-primary-background-default: {{colors.primary.default.hex}};
+    --control-primary-background-hover: {{colors.primary_container.default.hex}};
+    --control-primary-background-active: {{colors.on_primary_container.default.hex}};
+    --control-secondary-background-default: {{colors.outline_variant.default.hex}} !important;
+    --control-secondary-background-hover: color-mix(in srgb, {{colors.outline_variant.default.hex}} 90%, black);
+    --control-secondary-background-active: color-mix(in srgb, {{colors.outline_variant.default.hex}} 80%, black);
+    --control-secondary-border-default: {{colors.surface_container_highest.default.hex}};
+    --control-secondary-text-default: {{colors.on_surface.default.hex}} !important;
+    --control-secondary-text-hover: {{colors.on_surface.default.hex}};
+    --control-critical-primary-background-default: {{colors.error.default.hex}};
+    --control-critical-primary-background-hover: {{colors.error_container.default.hex}};
+    --control-critical-primary-background-active: {{colors.on_error_container.default.hex}};
+    --control-critical-primary-text-default: {{colors.surface.default.hex}};
+    --control-critical-primary-text-hover: {{colors.surface.default.hex}};
+    --control-critical-secondary-background-default: transparent;
+    --control-critical-secondary-background-hover: color-mix(in srgb, {{colors.error.default.hex}} 15%, transparent);
+    --control-critical-secondary-background-active: color-mix(in srgb, {{colors.error.default.hex}} 25%, transparent);
+    --control-critical-secondary-border-default: {{colors.error.default.hex}};
+    --control-critical-secondary-border-hover: {{colors.error.default.hex}};
+    --control-critical-secondary-border-active: {{colors.error.default.hex}};
+    --control-critical-secondary-text-default: {{colors.on_surface.default.hex}};
+    --control-critical-secondary-text-hover: {{colors.surface.default.hex}};
+    --control-critical-secondary-text-active: {{colors.surface.default.hex}};
+    --control-connected-background-default: {{colors.tertiary.default.hex}};
+    --control-connected-background-hover: {{colors.tertiary_container.default.hex}};
+    --control-connected-background-active: {{colors.on_tertiary_container.default.hex}};
+    --control-connected-border-default: {{colors.tertiary.default.hex}};
+    --control-connected-border-hover: {{colors.tertiary.default.hex}};
+    --control-connected-border-active: {{colors.tertiary.default.hex}};
+    --button-outline-primary-text: {{colors.on_surface.default.hex}};
+    --button-outline-brand-text: {{colors.on_surface.default.hex}};
+    --button-outline-brand-background-hover: {{colors.primary_container.default.hex}};
+    --button-outline-brand-border-active: {{colors.primary_container.default.hex}};
+    --modal-background: {{colors.surface.default.hex}} !important;
+    --modal-footer-background: {{colors.surface.default.hex}};
+    --scrollbar-thin-thumb: {{colors.primary.default.hex}};
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-thumb: {{colors.primary.default.hex}};
+    --scrollbar-auto-track: {{colors.surface_container_lowest.default.hex}};
+    --scrollbar-auto-scrollbar-color-thumb: {{colors.primary.default.hex}};
+    --scrollbar-auto-scrollbar-color-track: {{colors.surface_container_lowest.default.hex}};
+    --input-background-default: {{colors.surface_container_lowest.default.hex}};
+    --input-text-default: {{colors.on_surface.default.hex}};
+    --input-placeholder-text-default: {{colors.outline.default.hex}};
+    --input-border-default: {{colors.outline.default.hex}};
+    --logo-primary: {{colors.on_surface.default.hex}};
+    --control-brand-foreground: {{colors.primary.default.hex}};
+    --control-brand-foreground-new: {{colors.primary.default.hex}};
+    --mention-foreground: {{colors.primary.default.hex}};
+    --mention-background: color-mix(in srgb, {{colors.primary.default.hex}} 30%, transparent);
+    --message-mentioned-background-default: color-mix(in srgb, {{colors.secondary.default.hex}} 10%, transparent);
+    --message-mentioned-background-hover: color-mix(in srgb, {{colors.secondary.default.hex}} 8%, transparent);
+    --message-background-hover: color-mix(in srgb, {{colors.surface_container_lowest.default.hex}} 30%, transparent) !important;
+    --message-automod-background-default: color-mix(in srgb, {{colors.error.default.hex}} 5%, transparent);
+    --message-automod-background-hover: color-mix(in srgb, {{colors.error.default.hex}} 10%, transparent);
+    --message-highlight-background-default: color-mix(in srgb, {{colors.primary.default.hex}} 8%, transparent);
+    --message-highlight-background-hover: color-mix(in srgb, {{colors.primary.default.hex}} 6%, transparent);
+    --background-code: {{colors.surface.default.hex}};
+    --channels-default: {{colors.on_surface_variant.default.hex}} !important;
+    --channel-icon: {{colors.on_surface_variant.default.hex}} !important;
+    --channel-text-area-placeholder: color-mix(in srgb, {{colors.on_surface.default.hex}} 50%, transparent);
+    --channeltextarea-background: {{colors.surface_container_low.default.hex}};
+    --icon-muted: {{colors.on_surface_variant.default.hex}} !important;
+    --icon-voice-muted: {{colors.error.default.hex}};
+    --icon-default: {{colors.on_surface.default.hex}};
+    --icon-strong: {{colors.on_surface.default.hex}};
+    --icon-subtle: {{colors.outline.default.hex}};
+    --textbox-markdown-syntax: {{colors.outline.default.hex}};
+    --spoiler-revealed-background: {{colors.surface_container_highest.default.hex}};
+    --spoiler-hidden-background: {{colors.surface_variant.default.hex}};
+    --__adaptive-focus-ring-color: {{colors.primary.default.hex}};
+    --interactive-icon-default: {{colors.on_surface.default.hex}} !important;
+    --interactive-icon-hover: {{colors.on_surface.default.hex}};
+    --interactive-icon-active: {{colors.on_surface.default.hex}};
+    --interactive-text-default: {{colors.on_surface.default.hex}} !important;
+    --interactive-text-hover: {{colors.on_surface.default.hex}};
+    --interactive-text-active: {{colors.on_surface.default.hex}};
+    --interactive-muted: {{colors.outline.default.hex}};
+    --interactive-background-hover: color-mix(in srgb, {{colors.on_surface_variant.default.hex}} 15%, transparent);
+    --interactive-background-selected: color-mix(in srgb, {{colors.outline.default.hex}} 20%, transparent);
+    --interactive-background-active: color-mix(in srgb, {{colors.on_surface.default.hex}} 17%, transparent);
+    --__spoiler-background-color--hidden: {{colors.surface_variant.default.hex}};
+    --__spoiler-warning-background-color: {{colors.surface_variant.default.hex}};
+    --user-profile-overlay-background: {{colors.surface_container_low.default.hex}};
+    --user-profile-overlay-background-hover: {{colors.surface_container_highest.default.hex}};
+    --plum-23: {{colors.surface.default.hex}};
+    --badge-text-brand: {{colors.surface.default.hex}};
+    --text-status-online: {{colors.tertiary.default.hex}};
+    --text-status-idle: {{colors.secondary.default.hex}};
+    --text-status-dnd: {{colors.error.default.hex}};
+    --text-status-offline: {{colors.outline.default.hex}};
+    --icon-status-online: {{colors.tertiary.default.hex}};
+    --icon-status-idle: {{colors.secondary.default.hex}};
+    --icon-status-dnd: {{colors.error.default.hex}};
+    --icon-status-offline: {{colors.outline.default.hex}};
+    --twitch: {{colors.primary.default.hex}};
+    --playstation: {{colors.primary_container.default.hex}};
+    --spotify: {{colors.tertiary.default.hex}};
+    --notice-background-critical: {{colors.error.default.hex}};
+    --notice-background-info: {{colors.primary.default.hex}};
+    --notice-background-positive: {{colors.tertiary.default.hex}};
+    --notice-background-warning: {{colors.secondary.default.hex}};
+    --notice-text-critical: {{colors.surface_container_lowest.default.hex}};
+    --notice-text-info: {{colors.surface_container_lowest.default.hex}};
+    --notice-text-positive: {{colors.surface_container_lowest.default.hex}};
+    --notice-text-warning: {{colors.surface_container_lowest.default.hex}};
+}
+
+.visual-refresh.theme-light ::selection,
+.visual-refresh .theme-light ::selection {
+    background-color: color-mix(in srgb, {{colors.primary.default.hex}} 60%, transparent);
+}
+
+.visual-refresh.theme-light div[class^=newMessagesBar_],
+.visual-refresh .theme-light div[class^=newMessagesBar_] {
+    --white: {{colors.surface_container_lowest.default.hex}};
+}
+
+.visual-refresh.theme-light span[class^=folderGroupBackground_],
+.visual-refresh .theme-light span[class^=folderGroupBackground_] {
+    --background-mod-subtle: {{colors.surface_container_low.default.hex}} !important;
+}
+
+.visual-refresh.theme-light label[class^=container_]>div[data-mana-component=switch],
+.visual-refresh .theme-light label[class^=container_]>div[data-mana-component=switch] {
+    background-color: {{colors.surface_variant.default.hex}} !important;
+}
+
+.visual-refresh.theme-light label[class^=container_]>div[data-mana-component=switch]:hover,
+.visual-refresh .theme-light label[class^=container_]>div[data-mana-component=switch]:hover {
+    background-color: {{colors.outline_variant.default.hex}} !important;
+}
+
+.visual-refresh.theme-light label[class^=container_]>div[data-mana-component=switch]:has(+span>input:checked)>svg>rect,
+.visual-refresh .theme-light label[class^=container_]>div[data-mana-component=switch]:has(+span>input:checked)>svg>rect {
+    fill: {{colors.surface_container_lowest.default.hex}};
+}
+
+.visual-refresh.theme-light div.vc-switch-container,
+.visual-refresh .theme-light div.vc-switch-container {
+    --primary-400: {{colors.surface_variant.default.hex}};
+}
+
+.visual-refresh.theme-light div.vc-switch-container svg.vc-switch-slider>rect,
+.visual-refresh .theme-light div.vc-switch-container svg.vc-switch-slider>rect {
+    transition: fill .2s;
+}
+
+.visual-refresh.theme-light div.vc-switch-container.vc-switch-checked>svg.vc-switch-slider>rect,
+.visual-refresh .theme-light div.vc-switch-container.vc-switch-checked>svg.vc-switch-slider>rect {
+    fill: {{colors.surface_container_lowest.default.hex}};
+}
+
+.visual-refresh.theme-light div[class^=overlay_][class*=darkThemeGradient_],
+.visual-refresh .theme-light div[class^=overlay_][class*=darkThemeGradient_] {
+    background: linear-gradient(0deg, {{colors.surface.default.hex}} 0, color-mix(in srgb, {{colors.surface_container.default.hex}} 50%, transparent) 50%, color-mix(in srgb, {{colors.outline_variant.default.hex}} 0%, transparent));
+}
+
+.visual-refresh.theme-light div[class^=textContentFooter_],
+.visual-refresh .theme-light div[class^=textContentFooter_] {
+    background: linear-gradient(0deg, {{colors.surface.default.hex}}, color-mix(in srgb, {{colors.surface_container.default.hex}} 97%, transparent) 36px, color-mix(in srgb, {{colors.outline_variant.default.hex}} 40%, transparent)) !important;
+}
+
+.visual-refresh.theme-light div[class^=textContentFooter_] [class*=tagPill_],
+.visual-refresh .theme-light div[class^=textContentFooter_] [class*=tagPill_] {
+    background-color: color-mix(in srgb, {{colors.outline_variant.default.hex}} 90%, transparent);
+}
+
+.visual-refresh.theme-light [class*=greenGlow_],
+.visual-refresh .theme-light [class*=greenGlow_] {
+    background: color-mix(in srgb, {{colors.tertiary.default.hex}} 10%, transparent);
+}
+
+.visual-refresh.theme-light [class*=greenGlow_]:hover,
+.visual-refresh .theme-light [class*=greenGlow_]:hover {
+    background: color-mix(in srgb, {{colors.tertiary.default.hex}} 20%, transparent);
+}
+
+.visual-refresh.theme-light [class*=redGlow_],
+.visual-refresh .theme-light [class*=redGlow_] {
+    background: color-mix(in srgb, {{colors.error.default.hex}} 10%, transparent);
+}
+
+.visual-refresh.theme-light [class*=redGlow_]:hover,
+.visual-refresh .theme-light [class*=redGlow_]:hover {
+    background: color-mix(in srgb, {{colors.error.default.hex}} 20%, transparent) !important;
+}
+
+.visual-refresh.theme-light button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_],
+.visual-refresh .theme-light button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_] {
+    background-color: color-mix(in srgb, {{colors.tertiary.default.hex}} 10%, transparent);
+    border: 1px solid color-mix(in srgb, {{colors.tertiary.default.hex}} 10%, transparent);
+}
+
+.visual-refresh.theme-light button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_]:hover,
+.visual-refresh .theme-light button[class^=experimentButton_][class*=buttonColor_][class*=buttonActive_]:hover {
+    background-color: color-mix(in srgb, {{colors.tertiary.default.hex}} 20%, transparent);
+}
+
+.visual-refresh.theme-light div[class*=button_][class*=dangerous_],
+.visual-refresh .theme-light div[class*=button_][class*=dangerous_] {
+    color: {{colors.error.default.hex}};
+}

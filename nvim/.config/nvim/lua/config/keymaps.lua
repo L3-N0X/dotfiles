@@ -16,42 +16,12 @@ map("t", "<M-CR>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 -- Toggle Neotree (File Explorer) with <leader>e instead of focusing it
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
 
-
--- =========================================
--- Window and Buffer Management
--- =========================================
-
--- Fast window resizing with arrow keys
-map("n", "<Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
-map("n", "<Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
-map("n", "<Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
-map("n", "<Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
-
--- Buffer Pinning (using Snacks/Bufferline)
-map("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle Pin" })
-map("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete Non-Pinned Buffers" })
-
--- Focus Mode (Zen Mode / Window Zoom)
--- Requires snacks.nvim (which is default in modern LazyVim)
-map("n", "<leader>wm", function() Snacks.zen.zoom() end, { desc = "Toggle Window Zoom" })
-
-
 -- =========================================
 -- Code Navigation and Diagnostics
 -- =========================================
 
 -- Fast line diagnostics floating window
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-
--- Jump between errors only (skipping hints/warnings)
-map("n", "]e", function()
-    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
-end, { desc = "Next Error" })
-
-map("n", "[e", function()
-    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end, { desc = "Previous Error" })
-
 
 -- =========================================
 -- Search and Telescope

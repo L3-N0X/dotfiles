@@ -1,0 +1,10 @@
+:root {
+    --tb-bg: {{colors.surface.default.hex}};
+    --tb-fg: {{colors.on_surface.default.hex}};
+    --tb-accent: {{colors.primary.default.hex}};
+    --tb-accent-fg: {{colors.on_primary.default.hex}};
+    --tb-secondary: {{colors.secondary_container.default.hex}};
+    --tb-border: {{colors.outline_variant.default.hex}};
+    --tb-warning-bg: {{colors.error_container.default.hex}};
+    --tb-warning-fg: {{colors.on_error_container.default.hex}};
+}

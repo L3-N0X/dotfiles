@@ -250,3 +250,8 @@ alias reload="source ~/.zshrc && echo 'Zsh config reloaded successfully!'"
 alias valac="nvim ~/.config/alacritty/alacritty.toml"
 alias vthem="nvim ~/.tmux.conf"
 alias stow="/usr/bin/stow --dir /home/lenox/dotfiles --target /home/lenox"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/lenox/.local/bin:$PATH"
+export PATH="/home/lenox/.local/bin:$PATH"

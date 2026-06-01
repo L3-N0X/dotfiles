@@ -49,3 +49,7 @@ output_path = '~/.config/matugen/thunderbird.css'
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/vesktop/vesktop.css'
 output_path = '~/.config/vesktop/themes/matugen.css'
+
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux/tmux.conf'
+output_path = '~/.config/tmux/matugen-colors.conf'

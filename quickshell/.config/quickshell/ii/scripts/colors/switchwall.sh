@@ -57,6 +57,8 @@ post_process() {
 
     handle_kde_material_you_colors &
     "$SCRIPT_DIR/code/material-code-set-color.sh" &
+
+    systemctl --user restart xdg-desktop-portal-kde 2>/dev/null || pkill -f xdg-desktop-portal-kde
 }
 
 check_and_prompt_upscale() {

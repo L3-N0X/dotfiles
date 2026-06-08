@@ -12,9 +12,9 @@
           "#b4befe",
           "#74c7ec",
           "#a6e3a1",
-          "#f9e2af",
+          "#{{colors.tertiary.default.hex_stripped}}",
           "#fab387",
-          "#f38ba8"
+          "#{{colors.error.default.hex_stripped}}"
         ],
         "vim.mode.text": "#{{colors.surface_container_lowest.default.hex_stripped}}",
         "vim.normal.foreground": "#{{colors.surface_container_lowest.default.hex_stripped}}",
@@ -34,7 +34,7 @@
         "vim.visual_block.background": "#{{colors.primary.default.hex_stripped}}",
         "vim.replace.background": "#eba0ac",
         "background.appearance": "blurred",
-        "border": "#{{colors.outline_variant.default.hex_stripped}}15",
+        "border": "#{{colors.outline_variant.default.hex_stripped}}44",
         "border.variant": "#00000000",
         "border.focused": "#{{colors.primary.default.hex_stripped}}",
         "border.selected": "#{{colors.primary.default.hex_stripped}}",
@@ -42,7 +42,7 @@
         "border.disabled": "#{{colors.outline.default.hex_stripped}}",
         "elevated_surface.background": "#{{colors.surface_container_low.default.hex_stripped}}",
         "surface.background": "#{{colors.surface.default.hex_stripped}}db",
-        "background": "#{{colors.surface.default.hex_stripped}}e0",
+        "background": "#{{colors.surface.default.hex_stripped}}db",
         "element.background": "#{{colors.surface_container_lowest.default.hex_stripped}}",
         "element.hover": "#{{colors.surface_container_high.default.hex_stripped}}",
         "element.active": "#00000000",
@@ -64,38 +64,38 @@
         "icon.disabled": "#{{colors.outline_variant.default.hex_stripped}}",
         "icon.placeholder": "#{{colors.outline.default.hex_stripped}}",
         "icon.accent": "#{{colors.primary.default.hex_stripped}}",
-        "status_bar.background": "#{{colors.surface.default.hex_stripped}}e0",
-        "title_bar.background": "#{{colors.surface.default.hex_stripped}}e0",
-        "title_bar.inactive_background": "#{{colors.surface_container_lowest.default.hex_stripped}}",
-        "toolbar.background": "#00000000",
-        "tab_bar.background": "#00000000",
+        "status_bar.background": "#{{colors.surface_container_lowest.default.hex_stripped}}ef",
+        "title_bar.background": "#{{colors.surface_container_low.default.hex_stripped}}ef",
+        "title_bar.inactive_background": "#{{colors.surface_container_lowest.default.hex_stripped}}cc",
+        "toolbar.background": "#{{colors.surface_container_lowest.default.hex_stripped}}33",
+        "tab_bar.background": "#{{colors.surface_container_low.default.hex_stripped}}22",
         "tab.inactive_background": "#00000000",
-        "tab.active_background": "#{{colors.surface_container_low.default.hex_stripped}}d0",
+        "tab.active_background": "#{{colors.surface_container_lowest.default.hex_stripped}}33",
         "search.match_background": "#94e2d54d",
-        "search.active_match_background": "#f38ba84d",
+        "search.active_match_background": "#{{colors.error.default.hex_stripped}}4d",
         "panel.background": "#00000000",
         "panel.focused_border": "00000000",
         "panel.indent_guide": "#{{colors.outline_variant.default.hex_stripped}}99",
         "panel.indent_guide_active": "#{{colors.outline.default.hex_stripped}}",
         "panel.indent_guide_hover": "#{{colors.primary.default.hex_stripped}}",
         "panel.overlay_background": "#{{colors.surface.default.hex_stripped}}",
-        "pane.focused_border": "#{{colors.outline_variant.default.hex_stripped}}10",
-        "pane_group.border": "#{{colors.outline_variant.default.hex_stripped}}15",
-        "scrollbar.thumb.background": "#{{colors.on_surface_variant.default.hex_stripped}}c0",
-        "scrollbar.thumb.hover_background": "#{{colors.outline.default.hex_stripped}}",
-        "scrollbar.thumb.active_background": null,
+        "pane.focused_border": "#{{colors.primary.default.hex_stripped}}70",
+        "pane_group.border": "#{{colors.outline_variant.default.hex_stripped}}33",
+        "scrollbar.thumb.background": "#{{colors.outline_variant.default.hex_stripped}}50",
+        "scrollbar.thumb.hover_background": "#{{colors.outline_variant.default.hex_stripped}}80",
+        "scrollbar.thumb.active_background": "#{{colors.outline.default.hex_stripped}}80",
         "scrollbar.thumb.border": null,
         "scrollbar.track.background": "#00000000",
         "scrollbar.track.border": "#00000000",
-        "minimap.thumb.background": "#{{colors.primary.default.hex_stripped}}33",
-        "minimap.thumb.hover_background": "#{{colors.primary.default.hex_stripped}}66",
-        "minimap.thumb.active_background": "#{{colors.primary.default.hex_stripped}}99",
+        "minimap.thumb.background": "#{{colors.outline_variant.default.hex_stripped}}25",
+        "minimap.thumb.hover_background": "#{{colors.outline_variant.default.hex_stripped}}45",
+        "minimap.thumb.active_background": "#{{colors.outline_variant.default.hex_stripped}}70",
         "minimap.thumb.border": null,
         "editor.foreground": "#{{colors.on_surface.default.hex_stripped}}",
-        "editor.background": "#00000000",
-        "editor.gutter.background": "#00000000",
+        "editor.background": "#{{colors.surface_container_lowest.default.hex_stripped}}60",
+        "editor.gutter.background": "#{{colors.surface_container_lowest.default.hex_stripped}}60",
         "editor.subheader.background": "#{{colors.surface_container_low.default.hex_stripped}}",
-        "editor.active_line.background": "#00000000",
+        "editor.active_line.background": "#{{colors.outline_variant.default.hex_stripped}}1f",
         "editor.highlighted_line.background": "#{{colors.primary.default.hex_stripped}}12",
         "editor.line_number": "#ffffff20",
         "editor.active_line_number": "#{{colors.primary.default.hex_stripped}}90",
@@ -114,9 +114,9 @@
         "terminal.bright_foreground": "#{{colors.on_surface.default.hex_stripped}}",
         "terminal.ansi.black": "#45475a",
         "terminal.ansi.white": "#a6adc8",
-        "terminal.ansi.red": "#f38ba8",
+        "terminal.ansi.red": "#{{colors.error.default.hex_stripped}}",
         "terminal.ansi.green": "#a6e3a1",
-        "terminal.ansi.yellow": "#f9e2af",
+        "terminal.ansi.yellow": "#{{colors.tertiary.default.hex_stripped}}",
         "terminal.ansi.blue": "#89b4fa",
         "terminal.ansi.magenta": "#f5c2e7",
         "terminal.ansi.cyan": "#94e2d5",
@@ -130,9 +130,9 @@
         "terminal.ansi.bright_cyan": "#6bd7ca",
         "terminal.ansi.dim_black": "#45475a",
         "terminal.ansi.dim_white": "#a6adc8",
-        "terminal.ansi.dim_red": "#f38ba8",
+        "terminal.ansi.dim_red": "#{{colors.error.default.hex_stripped}}",
         "terminal.ansi.dim_green": "#a6e3a1",
-        "terminal.ansi.dim_yellow": "#f9e2af",
+        "terminal.ansi.dim_yellow": "#{{colors.tertiary.default.hex_stripped}}",
         "terminal.ansi.dim_blue": "#89b4fa",
         "terminal.ansi.dim_magenta": "#f5c2e7",
         "terminal.ansi.dim_cyan": "#94e2d5",
@@ -206,9 +206,9 @@
             "background": "#a6e3a1"
           },
           {
-            "cursor": "#f9e2af",
-            "selection": "#f9e2af40",
-            "background": "#f9e2af"
+            "cursor": "#{{colors.tertiary.default.hex_stripped}}",
+            "selection": "#{{colors.tertiary.default.hex_stripped}}40",
+            "background": "#{{colors.tertiary.default.hex_stripped}}"
           },
           {
             "cursor": "#fab387",
@@ -216,9 +216,9 @@
             "background": "#fab387"
           },
           {
-            "cursor": "#f38ba8",
-            "selection": "#f38ba840",
-            "background": "#f38ba8"
+            "cursor": "#{{colors.error.default.hex_stripped}}",
+            "selection": "#{{colors.error.default.hex_stripped}}40",
+            "background": "#{{colors.error.default.hex_stripped}}"
           }
         ],
         "version_control.added": "#{{colors.tertiary.default.hex_stripped}}",
@@ -238,7 +238,7 @@
             "font_weight": null
           },
           "variable.builtin": {
-            "color": "#f38ba8",
+            "color": "#{{colors.error.default.hex_stripped}}",
             "font_style": null,
             "font_weight": null
           },
@@ -253,7 +253,7 @@
             "font_weight": null
           },
           "variable.special": {
-            "color": "#f38ba8",
+            "color": "#{{colors.error.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
@@ -273,7 +273,7 @@
             "font_weight": null
           },
           "module": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
@@ -353,7 +353,7 @@
             "font_weight": null
           },
           "tag.attribute": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
@@ -363,7 +363,7 @@
             "font_weight": null
           },
           "type": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": null,
             "font_weight": null
           },
@@ -373,17 +373,17 @@
             "font_weight": null
           },
           "type.definition": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": null,
             "font_weight": null
           },
           "type.interface": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
           "type.super": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
@@ -393,7 +393,7 @@
             "font_weight": null
           },
           "property": {
-            "color": "#89b4fa",
+            "color": "#{{colors.secondary.default.hex_stripped}}",
             "font_style": null,
             "font_weight": null
           },
@@ -568,17 +568,17 @@
             "font_weight": null
           },
           "comment.error": {
-            "color": "#f38ba8",
+            "color": "#{{colors.error.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
           "comment.warning": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
           "comment.warn": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
@@ -603,7 +603,7 @@
             "font_weight": null
           },
           "diff.minus": {
-            "color": "#f38ba8",
+            "color": "#{{colors.error.default.hex_stripped}}",
             "font_style": null,
             "font_weight": null
           },
@@ -618,7 +618,7 @@
             "font_weight": null
           },
           "namespace": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": "italic",
             "font_weight": null
           },
@@ -678,7 +678,7 @@
             "font_weight": null
           },
           "type.class.definition": {
-            "color": "#f9e2af",
+            "color": "#{{colors.tertiary.default.hex_stripped}}",
             "font_style": null,
             "font_weight": 700
           },
@@ -708,7 +708,7 @@
             "font_weight": null
           },
           "predoc": {
-            "color": "#f38ba8",
+            "color": "#{{colors.error.default.hex_stripped}}",
             "font_style": null,
             "font_weight": null
           },
@@ -733,7 +733,7 @@
             "font_weight": 800
           },
           "variant": {
-            "color": "#f38ba8",
+            "color": "#{{colors.error.default.hex_stripped}}",
             "font_style": null,
             "font_weight": null
           }

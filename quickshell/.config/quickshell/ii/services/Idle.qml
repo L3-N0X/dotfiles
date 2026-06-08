@@ -1,6 +1,7 @@
 pragma Singleton
 import qs.modules.common
 import QtQuick
+import QtCore  
 import Quickshell
 import Quickshell.Wayland
 
@@ -11,16 +12,21 @@ Singleton {
     id: root
 
     property alias inhibit: idleInhibitor.enabled
-    inhibit: false
+    // inhibit: false
+
+    Settings {
+        id: settings
+        property bool savedInhibit: false
+    }
+
+    Component.onCompleted: {
+        root.inhibit = settings.savedInhibit
+    }
 
     Connections {
         target: Persistent
         function onReadyChanged() {
-            if (!Persistent.isNewHyprlandInstance) {
-                root.inhibit = Persistent.states.idle.inhibit;
-            } else {
-                Persistent.states.idle.inhibit = root.inhibit;
-            }
+            Persistent.states.idle.inhibit = root.inhibit
         }
     }
 
@@ -30,11 +36,14 @@ Singleton {
         } else {
             root.inhibit = !root.inhibit;
         }
-        Persistent.states.idle.inhibit = root.inhibit;
+
+        settings.savedInhibit = root.inhibit
+        Persistent.states.idle.inhibit = root.inhibit
     }
 
     IdleInhibitor {
         id: idleInhibitor
+        enabled: false 
         window: PanelWindow {
             // Inhibitor requires a "visible" surface
             // Actually not lol

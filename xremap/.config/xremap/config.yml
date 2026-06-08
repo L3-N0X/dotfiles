@@ -1,0 +1,6 @@
+modmap:
+  - name: Minecraft Sprint Override
+    application:
+      only: ["Minecraft"]
+    remap:
+      KEY_CAPSLOCK: KEY_CTRL_L

@@ -14,6 +14,7 @@ Item {
     implicitWidth: resourceRowLayout.x < 0 ? 0 : resourceRowLayout.implicitWidth
     implicitHeight: Appearance.sizes.barHeight
     property bool warning: percentage * 100 >= warningThreshold
+    property int shape: MaterialShape.Shape.Circle
 
     RowLayout {
         id: resourceRowLayout
@@ -23,30 +24,14 @@ Item {
             verticalCenter: parent.verticalCenter
         }
 
-        ClippedFilledCircularProgress {
-            id: resourceCircProg
+        ShapeProgress {
+            id: resourceShapeProgress
             Layout.alignment: Qt.AlignVCenter
-            lineWidth: Appearance.rounding.unsharpen
-            value: percentage
             implicitSize: 20
+            value: percentage
             colPrimary: root.warning ? Appearance.colors.colError : Appearance.colors.colOnSecondaryContainer
-            accountForLightBleeding: !root.warning
-            enableAnimation: false
-
-            Item {
-                anchors.centerIn: parent
-                width: resourceCircProg.implicitSize
-                height: resourceCircProg.implicitSize
-                
-                MaterialSymbol {
-                    anchors.centerIn: parent
-                    font.weight: Font.DemiBold
-                    fill: 1
-                    text: iconName
-                    iconSize: Appearance.font.pixelSize.normal
-                    color: Appearance.m3colors.m3onSecondaryContainer
-                }
-            }
+            colSecondary: Appearance.colors.colSecondaryContainer
+            shape: root.shape
         }
 
         Item {

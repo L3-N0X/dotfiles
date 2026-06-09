@@ -1,0 +1,122 @@
+{
+  "colors": {
+    "accent": "{{colors.primary.default.hex}}",
+    "messages": {
+      "backgrounds": {
+        "alternate": "{{colors.surface_container.default.hex}}",
+        "regular": "{{colors.background.default.hex}}"
+      },
+      "disabled": "#99{{colors.scrim.default.hex_stripped}}",
+      "highlightAnimationEnd": "#35{{colors.primary.default.hex_stripped}}",
+      "highlightAnimationStart": "#75{{colors.primary.default.hex_stripped}}",
+      "selection": "#58{{colors.primary_container.default.hex_stripped}}",
+      "textColors": {
+        "caret": "{{colors.primary.default.hex}}",
+        "chatPlaceholder": "{{colors.on_surface_variant.default.hex}}",
+        "link": "{{colors.primary.default.hex}}",
+        "regular": "{{colors.on_background.default.hex}}",
+        "system": "{{colors.secondary.default.hex}}"
+      }
+    },
+    "scrollbars": {
+      "background": "#00000000",
+      "thumb": "{{colors.outline_variant.default.hex}}",
+      "thumbSelected": "{{colors.outline.default.hex}}"
+    },
+    "splits": {
+      "background": "{{colors.surface_container_lowest.default.hex}}",
+      "dropPreview": "#30{{colors.primary.default.hex_stripped}}",
+      "dropPreviewBorder": "{{colors.primary.default.hex}}",
+      "dropTargetRect": "#00{{colors.primary.default.hex_stripped}}",
+      "dropTargetRectBorder": "{{colors.primary.default.hex}}",
+      "header": {
+        "background": "{{colors.surface_container_lowest.default.hex}}",
+        "border": "{{colors.outline_variant.default.hex}}",
+        "focusedBackground": "{{colors.background.default.hex}}",
+        "focusedBorder": "{{colors.primary.default.hex}}",
+        "focusedText": "{{colors.primary.default.hex}}",
+        "text": "{{colors.on_surface.default.hex}}"
+      },
+      "input": {
+        "background": "{{colors.surface_container_lowest.default.hex}}",
+        "text": "{{colors.on_surface.default.hex}}",
+        "selection": "#58{{colors.primary_container.default.hex_stripped}}"
+      },
+      "messageSeperator": "{{colors.outline_variant.default.hex}}",
+      "resizeHandle": "#70{{colors.primary.default.hex_stripped}}",
+      "resizeHandleBackground": "#20{{colors.primary.default.hex_stripped}}"
+    },
+    "tabs": {
+      "liveIndicator": "{{colors.primary.default.hex}}",
+      "rerunIndicator": "{{colors.tertiary.default.hex}}",
+      "dividerLine": "{{colors.outline_variant.default.hex}}",
+      "highlighted": {
+        "backgrounds": {
+          "hover": "{{colors.surface_container_high.default.hex}}",
+          "regular": "{{colors.background.default.hex}}",
+          "unfocused": "{{colors.surface_container_low.default.hex}}"
+        },
+        "line": {
+          "hover": "{{colors.error.default.hex}}",
+          "regular": "{{colors.primary.default.hex}}",
+          "unfocused": "{{colors.error.default.hex}}"
+        },
+        "text": "{{colors.primary.default.hex}}"
+      },
+      "newMessage": {
+        "backgrounds": {
+          "hover": "{{colors.surface_container_high.default.hex}}",
+          "regular": "{{colors.surface_container_low.default.hex}}",
+          "unfocused": "{{colors.surface_container_low.default.hex}}"
+        },
+        "line": {
+          "hover": "{{colors.outline.default.hex}}",
+          "regular": "{{colors.tertiary.default.hex}}",
+          "unfocused": "{{colors.outline.default.hex}}"
+        },
+        "text": "{{colors.on_surface.default.hex}}"
+      },
+      "regular": {
+        "backgrounds": {
+          "hover": "{{colors.surface_container_high.default.hex}}",
+          "regular": "{{colors.surface_container_lowest.default.hex}}",
+          "unfocused": "{{colors.surface_container_lowest.default.hex}}"
+        },
+        "line": {
+          "hover": "{{colors.outline.default.hex}}",
+          "regular": "{{colors.surface_container_lowest.default.hex}}",
+          "unfocused": "{{colors.outline.default.hex}}"
+        },
+        "text": "{{colors.on_surface_variant.default.hex}}"
+      },
+      "selected": {
+        "backgrounds": {
+          "hover": "{{colors.background.default.hex}}",
+          "regular": "{{colors.surface_container_high.default.hex}}",
+          "unfocused": "{{colors.background.default.hex}}"
+        },
+        "line": {
+          "hover": "{{colors.primary.default.hex}}",
+          "regular": "{{colors.primary.default.hex}}",
+          "unfocused": "{{colors.primary.default.hex}}"
+        },
+        "text": "{{colors.on_surface.default.hex}}"
+      }
+    },
+    "window": {
+      "background": "{{colors.background.default.hex}}",
+      "text": "{{colors.on_background.default.hex}}"
+    }
+  },
+  "metadata": {
+    "iconTheme": "light"
+  },
+  "ctcMeta": {
+    "name": "Black",
+    "createdAt": "1970-01-01T00:00:00Z",
+    "modifiedAt": "1970-01-01T00:00:00Z",
+    "simpleTabSettings": false,
+    "checkeredRow": true,
+    "messageSeparator": true
+  }
+}

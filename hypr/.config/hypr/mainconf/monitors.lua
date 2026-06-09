@@ -24,3 +24,15 @@ hl.monitor({
     position = "auto-right", -- Automatically places it to the right
     scale = 1
 })
+
+-- Force Laptop (eDP-1) to be Group 0 (Workspaces 1-10)
+hl.workspace_rule({ workspace = "1", monitor = "eDP-1", default = true })
+for i = 2, 10 do
+    hl.workspace_rule({ workspace = tostring(i), monitor = "eDP-1" })
+end
+
+-- Force HDMI to be Group 1 (Workspaces 11-20)
+hl.workspace_rule({ workspace = "11", monitor = "HDMI-A-1", default = true })
+for i = 12, 20 do
+    hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1" })
+end

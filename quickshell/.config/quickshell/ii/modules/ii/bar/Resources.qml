@@ -1,4 +1,5 @@
 import qs.modules.common
+import qs.modules.common.widgets
 import qs.services
 import QtQuick
 import QtQuick.Layouts
@@ -23,6 +24,7 @@ MouseArea {
             iconName: "memory"
             percentage: ResourceUsage.memoryUsedPercentage
             warningThreshold: Config.options.bar.resources.memoryWarningThreshold
+            shape: MaterialShape.Shape.Clover4Leaf
         }
 
         // Resource {
@@ -43,6 +45,7 @@ MouseArea {
                 root.alwaysShowAllResources
             Layout.leftMargin: shown ? 6 : 0
             warningThreshold: Config.options.bar.resources.cpuWarningThreshold
+            shape: MaterialShape.Shape.Sunny
         }
 
     }

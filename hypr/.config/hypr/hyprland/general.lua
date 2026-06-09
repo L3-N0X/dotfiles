@@ -300,8 +300,13 @@ hl.config({
     }
 })
 
-hl.device({
-    name = "keyboard-passthrough",
-    -- Override the kb_options just for this device
-    kb_options = "caps:ctrl_modifier,altwin:swap_alt_win"
-})
+-- hl.device({
+--    name = "keyboard-passthrough",
+--    -- Override the kb_options just for this device
+--    kb_options = "caps:ctrl_modifier,altwin:swap_alt_win"
+--})
+
+-- hl.device({
+--     name = "rustdesk-uinput-keyboard",
+--     kb_options = "caps:ctrl_modifier,altwin:swap_alt_win"
+-- })

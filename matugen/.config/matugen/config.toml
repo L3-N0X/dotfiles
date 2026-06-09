@@ -58,3 +58,6 @@ output_path = '~/.config/tmux/matugen-colors.conf'
 input_path = '~/.config/matugen/templates/zed.json'
 output_path = '~/.config/zed/themes/matugen-blur.json'
 
+[templates.chatterino]
+input_path = '~/.config/matugen/templates/chatterino/matugen.json'
+output_path = '~/.local/share/chatterino/Themes/matugen.json'

@@ -1,0 +1,6 @@
+[general]
+# Tell Satty to pipe the image to your script when you hit Copy
+copy-command = "/home/lenox/.local/bin/upload_image.sh"
+
+# Optional: Set default behavior for the Enter key (save-to-clipboard will trigger the script)
+action-on-enter = "save-to-clipboard"

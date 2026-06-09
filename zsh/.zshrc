@@ -253,6 +253,9 @@ alias e='nvim'
 alias ee="sudoedit"
 alias cd='z'
 
+# Zed EDITOR
+alias zed="zeditor"
+
 # Config Upkeep & Dotfiles
 alias reload="source ~/.zshrc && echo 'Zsh config reloaded successfully!'"
 alias valac="nvim ~/.config/alacritty/alacritty.toml"

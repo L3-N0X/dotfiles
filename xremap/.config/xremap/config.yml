@@ -1,6 +1,18 @@
 modmap:
+  # Minecraft
   - name: Minecraft Sprint Override
     application:
-      only: ["Minecraft"]
+      only: "Minecraft"
     remap:
-      KEY_CAPSLOCK: KEY_CTRL_L
+      CAPSLOCK: CTRL_L
+
+  # Android Keyboard over sunshine
+  - name: "Fix Android Keyboard"
+    device:
+      only:
+        - "RustDesk UInput Keyboard"
+        - "Keyboard passthrough"
+    remap:
+      GRAVE: ESC
+      ALT_L: SUPER_L
+      CAPSLOCK: ALT_L

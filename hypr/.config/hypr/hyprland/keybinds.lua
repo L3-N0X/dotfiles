@@ -73,7 +73,7 @@ hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(qsIsAlive .. " || pidof slurp || " 
 --# OCR
 hl.bind("SUPER + SHIFT + T", hl.dsp.global("quickshell:regionOcr"),
     { description = "Utilities: Character recognition >> clipboard" })
-hl.bind("SUPER + SHIFT + X", hl.dsp.global("quickshell:screenTranslate"),
+hl.bind("SUPER + SHIFT + G", hl.dsp.global("quickshell:screenTranslate"),
     { description = "Utilities: Translate screen content" })
 hl.bind("SUPER + SHIFT + T", hl.dsp.exec_cmd(
     qsIsAlive ..

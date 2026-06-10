@@ -26,7 +26,7 @@ Singleton {
     readonly property string interfaceRole: "interface"
     readonly property string apiKeyEnvVarName: "API_KEY"
 
-    signal responseFinished()
+    signal responseFinished
 
     property string systemPrompt: {
         let prompt = Config.options?.ai?.systemPrompt ?? "";
@@ -44,8 +44,10 @@ Singleton {
     readonly property var apiKeysLoaded: KeyringStorage.loaded
     readonly property bool currentModelHasApiKey: {
         const model = models[currentModelId];
-        if (!model || !model.requires_key) return true;
-        if (!apiKeysLoaded) return false;
+        if (!model || !model.requires_key)
+            return true;
+        if (!apiKeysLoaded)
+            return false;
         const key = apiKeys[model.key_id];
         return (key?.length > 0);
     }
@@ -63,7 +65,7 @@ Singleton {
     }
 
     function safeModelName(modelName) {
-        return modelName.replace(/:/g, "_").replace(/ /g, "-").replace(/\//g, "-")
+        return modelName.replace(/:/g, "_").replace(/ /g, "-").replace(/\//g, "-");
     }
 
     property list<var> defaultPrompts: []
@@ -75,7 +77,7 @@ Singleton {
         "{DISTRO}": SystemInfo.distroName,
         "{DATETIME}": `${DateTime.time}, ${DateTime.collapsedCalendarFormat}`,
         "{WINDOWCLASS}": ToplevelManager.activeToplevel?.appId ?? "Unknown",
-        "{DE}": `${SystemInfo.desktopEnvironment} (${SystemInfo.windowingSystem})` 
+        "{DE}": `${SystemInfo.desktopEnvironment} (${SystemInfo.windowingSystem})`
     }
 
     // Gemini: https://ai.google.dev/gemini-api/docs/function-calling
@@ -83,51 +85,57 @@ Singleton {
     property string currentTool: Config?.options.ai.tool ?? "search"
     property var tools: {
         "gemini": {
-            "functions": [{"functionDeclarations": [
+            "functions": [
                 {
-                    "name": "switch_to_search_mode",
-                    "description": "Search the web",
-                },
-                {
-                    "name": "get_shell_config",
-                    "description": "Get the desktop shell config file contents",
-                },
-                {
-                    "name": "set_shell_config",
-                    "description": "Set a field in the desktop graphical shell config file. Must only be used after `get_shell_config`.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "key": {
-                                "type": "string",
-                                "description": "The key to set, e.g. `bar.borderless`. MUST NOT BE GUESSED, use `get_shell_config` to see what keys are available before setting.",
-                            },
-                            "value": {
-                                "type": "string",
-                                "description": "The value to set, e.g. `true`"
+                    "functionDeclarations": [
+                        {
+                            "name": "switch_to_search_mode",
+                            "description": "Search the web"
+                        },
+                        {
+                            "name": "get_shell_config",
+                            "description": "Get the desktop shell config file contents"
+                        },
+                        {
+                            "name": "set_shell_config",
+                            "description": "Set a field in the desktop graphical shell config file. Must only be used after `get_shell_config`.",
+                            "parameters": {
+                                "type": "object",
+                                "properties": {
+                                    "key": {
+                                        "type": "string",
+                                        "description": "The key to set, e.g. `bar.borderless`. MUST NOT BE GUESSED, use `get_shell_config` to see what keys are available before setting."
+                                    },
+                                    "value": {
+                                        "type": "string",
+                                        "description": "The value to set, e.g. `true`"
+                                    }
+                                },
+                                "required": ["key", "value"]
                             }
                         },
-                        "required": ["key", "value"]
-                    }
-                },
-                {
-                    "name": "run_shell_command",
-                    "description": "Run a shell command in bash and get its output. Use this only for quick commands that don't require user interaction. For commands that require interaction, ask the user to run manually instead.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "command": {
-                                "type": "string",
-                                "description": "The bash command to run",
-                            },
+                        {
+                            "name": "run_shell_command",
+                            "description": "Run a shell command in bash and get its output. Use this only for quick commands that don't require user interaction. For commands that require interaction, ask the user to run manually instead.",
+                            "parameters": {
+                                "type": "object",
+                                "properties": {
+                                    "command": {
+                                        "type": "string",
+                                        "description": "The bash command to run"
+                                    }
+                                },
+                                "required": ["command"]
+                            }
                         },
-                        "required": ["command"]
-                    }
-                },
-            ]}],
-            "search": [{
-                "google_search": {}
-            }],
+                    ]
+                }
+            ],
+            "search": [
+                {
+                    "google_search": {}
+                }
+            ],
             "none": []
         },
         "openai": {
@@ -138,7 +146,7 @@ Singleton {
                         "name": "get_shell_config",
                         "description": "Get the desktop shell config file contents",
                         "parameters": {}
-                    },
+                    }
                 },
                 {
                     "type": "function",
@@ -150,7 +158,7 @@ Singleton {
                             "properties": {
                                 "key": {
                                     "type": "string",
-                                    "description": "The key to set, e.g. `bar.borderless`. MUST NOT BE GUESSED, use `get_shell_config` to see what keys are available before setting.",
+                                    "description": "The key to set, e.g. `bar.borderless`. MUST NOT BE GUESSED, use `get_shell_config` to see what keys are available before setting."
                                 },
                                 "value": {
                                     "type": "string",
@@ -171,16 +179,16 @@ Singleton {
                             "properties": {
                                 "command": {
                                     "type": "string",
-                                    "description": "The bash command to run",
-                                },
+                                    "description": "The bash command to run"
+                                }
                             },
                             "required": ["command"]
                         }
-                    },
+                    }
                 },
             ],
             "search": [],
-            "none": [],
+            "none": []
         },
         "mistral": {
             "functions": [
@@ -190,7 +198,7 @@ Singleton {
                         "name": "get_shell_config",
                         "description": "Get the desktop shell config file contents",
                         "parameters": {}
-                    },
+                    }
                 },
                 {
                     "type": "function",
@@ -202,7 +210,7 @@ Singleton {
                             "properties": {
                                 "key": {
                                     "type": "string",
-                                    "description": "The key to set, e.g. `bar.borderless`. MUST NOT BE GUESSED, use `get_shell_config` to see what keys are available before setting.",
+                                    "description": "The key to set, e.g. `bar.borderless`. MUST NOT BE GUESSED, use `get_shell_config` to see what keys are available before setting."
                                 },
                                 "value": {
                                     "type": "string",
@@ -223,16 +231,16 @@ Singleton {
                             "properties": {
                                 "command": {
                                     "type": "string",
-                                    "description": "The bash command to run",
-                                },
+                                    "description": "The bash command to run"
+                                }
                             },
                             "required": ["command"]
                         }
-                    },
+                    }
                 },
             ],
             "search": [],
-            "none": [],
+            "none": []
         }
     }
     property list<var> availableTools: Object.keys(root.tools[models[currentModelId]?.api_format])
@@ -255,45 +263,32 @@ Singleton {
     // - api_format: The API format of the model. Can be "openai" or "gemini". Default is "openai".
     // - extraParams: Extra parameters to be passed to the model. This is a JSON object.
     property var models: Config.options.policies.ai === 2 ? {} : {
-        "gemini-2.5-flash": aiModelComponent.createObject(this, {
-            "name": "Gemini 2.5 Flash",
+        "gemini-3.1-flash-lite": aiModelComponent.createObject(this, {
+            "name": "Gemini 3.1 Flash Lite",
             "icon": "google-gemini-symbolic",
             "description": Translation.tr("Online | Google's model\nNewer model that's slower than its predecessor but should deliver higher quality answers"),
             "homepage": "https://aistudio.google.com",
-            "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent",
-            "model": "gemini-2.5-flash",
+            "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:streamGenerateContent",
+            "model": "gemini-3.1-flash-lite",
             "requires_key": true,
             "key_id": "gemini",
             "key_get_link": "https://aistudio.google.com/app/apikey",
             "key_get_description": Translation.tr("**Pricing**: free. Data used for training.\n\n**Instructions**: Log into Google account, allow AI Studio to create Google Cloud project or whatever it asks, go back and click Get API key"),
-            "api_format": "gemini",
+            "api_format": "gemini"
         }),
-        "gemini-3-flash": aiModelComponent.createObject(this, {
-            "name": "Gemini 3 Flash",
+        "gemini-3.1-pro-preview": aiModelComponent.createObject(this, {
+            "name": "Gemini 3.1 Pro Preview",
             "icon": "google-gemini-symbolic",
             "description": Translation.tr("Online | Google's model\nPro-level intelligence at the speed and pricing of Flash."),
             "homepage": "https://aistudio.google.com",
-            "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:streamGenerateContent",
-            "model": "gemini-3-flash-preview",
+            "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:streamGenerateContent",
+            "model": "gemini-3.1-pro-preview",
             "requires_key": true,
             "key_id": "gemini",
             "key_get_link": "https://aistudio.google.com/app/apikey",
             "key_get_description": Translation.tr("**Pricing**: free. Data used for training.\n\n**Instructions**: Log into Google account, allow AI Studio to create Google Cloud project or whatever it asks, go back and click Get API key"),
-            "api_format": "gemini",
-        }),
-        "mistral-medium-3": aiModelComponent.createObject(this, {
-            "name": "Mistral Medium 3",
-            "icon": "mistral-symbolic",
-            "description": Translation.tr("Online | %1's model | Delivers fast, responsive and well-formatted answers. Disadvantages: not very eager to do stuff; might make up unknown function calls").arg("Mistral"),
-            "homepage": "https://mistral.ai/news/mistral-medium-3",
-            "endpoint": "https://api.mistral.ai/v1/chat/completions",
-            "model": "mistral-medium-2505",
-            "requires_key": true,
-            "key_id": "mistral",
-            "key_get_link": "https://console.mistral.ai/api-keys",
-            "key_get_description": Translation.tr("**Instructions**: Log into Mistral account, go to Keys on the sidebar, click Create new key"),
-            "api_format": "mistral",
-        }),
+            "api_format": "gemini"
+        })
     }
     property var modelList: Object.keys(root.models)
     property var currentModelId: Persistent.states?.ai?.model || modelList[0]
@@ -301,22 +296,23 @@ Singleton {
     property var apiStrategies: {
         "openai": openaiApiStrategy.createObject(this),
         "gemini": geminiApiStrategy.createObject(this),
-        "mistral": mistralApiStrategy.createObject(this),
+        "mistral": mistralApiStrategy.createObject(this)
     }
     property ApiStrategy currentApiStrategy: apiStrategies[models[currentModelId]?.api_format || "openai"]
 
     function addUserModels() {
         (Config?.options.ai?.extraModels ?? []).forEach(model => {
             const safeModelName = root.safeModelName(model["model"]);
-            root.addModel(safeModelName, model)
+            root.addModel(safeModelName, model);
         });
     }
 
     Connections {
         target: Config
         function onReadyChanged() {
-            if (!Config.ready) return;
-            root.addUserModels()
+            if (!Config.ready)
+                return;
+            root.addUserModels();
         }
     }
 
@@ -325,26 +321,32 @@ Singleton {
 
     Component.onCompleted: {
         setModel(currentModelId, false, false); // Do necessary setup for model
-        root.addUserModels() // Config onReadyChanged above might not fire if config is loaded before this service
+        root.addUserModels(); // Config onReadyChanged above might not fire if config is loaded before this service
     }
 
     function guessModelLogo(model) {
-        if (model.includes("llama")) return "ollama-symbolic";
-        if (model.includes("gemma")) return "google-gemini-symbolic";
-        if (model.includes("deepseek")) return "deepseek-symbolic";
-        if (/^phi\d*:/i.test(model)) return "microsoft-symbolic";
+        if (model.includes("llama"))
+            return "ollama-symbolic";
+        if (model.includes("gemma"))
+            return "google-gemini-symbolic";
+        if (model.includes("deepseek"))
+            return "deepseek-symbolic";
+        if (/^phi\d*:/i.test(model))
+            return "microsoft-symbolic";
         return "ollama-symbolic";
     }
 
     function guessModelName(model) {
         const replaced = model.replace(/-/g, ' ').replace(/:/g, ' ');
         let words = replaced.split(' ');
-        words[words.length - 1] = words[words.length - 1].replace(/(\d+)b$/, (_, num) => `${num}B`)
-        words = words.map((word) => {
-            return (word.charAt(0).toUpperCase() + word.slice(1))
+        words[words.length - 1] = words[words.length - 1].replace(/(\d+)b$/, (_, num) => `${num}B`);
+        words = words.map(word => {
+            return (word.charAt(0).toUpperCase() + word.slice(1));
         });
-        if (words[words.length - 1] === "Latest") words.pop();
-        else words[words.length - 1] = `(${words[words.length - 1]})`; // Surround the last word with square brackets
+        if (words[words.length - 1] === "Latest")
+            words.pop();
+        else
+            words[words.length - 1] = `(${words[words.length - 1]})`; // Surround the last word with square brackets
         const result = words.join(' ');
         return result;
     }
@@ -362,7 +364,8 @@ Singleton {
         stdout: SplitParser {
             onRead: data => {
                 try {
-                    if (data.length === 0) return;
+                    if (data.length === 0)
+                        return;
                     const dataJson = JSON.parse(data);
                     root.modelList = [...root.modelList, ...dataJson];
                     dataJson.forEach(model => {
@@ -374,12 +377,11 @@ Singleton {
                             "homepage": `https://ollama.com/library/${model}`,
                             "endpoint": "http://localhost:11434/v1/chat/completions",
                             "model": model,
-                            "requires_key": false,
-                        })
+                            "requires_key": false
+                        });
                     });
 
                     root.modelList = Object.keys(root.models);
-
                 } catch (e) {
                     console.log("Could not fetch Ollama models:", e);
                 }
@@ -393,10 +395,9 @@ Singleton {
         command: ["ls", "-1", Directories.defaultAiPrompts]
         stdout: StdioCollector {
             onStreamFinished: {
-                if (text.length === 0) return;
-                root.defaultPrompts = text.split("\n")
-                    .filter(fileName => fileName.endsWith(".md") || fileName.endsWith(".txt"))
-                    .map(fileName => `${Directories.defaultAiPrompts}/${fileName}`)
+                if (text.length === 0)
+                    return;
+                root.defaultPrompts = text.split("\n").filter(fileName => fileName.endsWith(".md") || fileName.endsWith(".txt")).map(fileName => `${Directories.defaultAiPrompts}/${fileName}`);
             }
         }
     }
@@ -407,10 +408,9 @@ Singleton {
         command: ["ls", "-1", Directories.userAiPrompts]
         stdout: StdioCollector {
             onStreamFinished: {
-                if (text.length === 0) return;
-                root.userPrompts = text.split("\n")
-                    .filter(fileName => fileName.endsWith(".md") || fileName.endsWith(".txt"))
-                    .map(fileName => `${Directories.userAiPrompts}/${fileName}`)
+                if (text.length === 0)
+                    return;
+                root.userPrompts = text.split("\n").filter(fileName => fileName.endsWith(".md") || fileName.endsWith(".txt")).map(fileName => `${Directories.userAiPrompts}/${fileName}`);
             }
         }
     }
@@ -421,19 +421,19 @@ Singleton {
         command: ["ls", "-1", Directories.aiChats]
         stdout: StdioCollector {
             onStreamFinished: {
-                if (text.length === 0) return;
-                root.savedChats = text.split("\n")
-                    .filter(fileName => fileName.endsWith(".json"))
-                    .map(fileName => `${Directories.aiChats}/${fileName}`)
+                if (text.length === 0)
+                    return;
+                root.savedChats = text.split("\n").filter(fileName => fileName.endsWith(".json")).map(fileName => `${Directories.aiChats}/${fileName}`);
             }
         }
     }
 
     FileView {
         id: promptLoader
-        watchChanges: false;
+        watchChanges: false
         onLoadedChanged: {
-            if (!promptLoader.loaded) return;
+            if (!promptLoader.loaded)
+                return;
             Config.options.ai.systemPrompt = promptLoader.text();
             root.addMessage(Translation.tr("Loaded the following system prompt\n\n---\n\n%1").arg(Config.options.ai.systemPrompt), root.interfaceRole);
         }
@@ -444,19 +444,20 @@ Singleton {
     }
 
     function loadPrompt(filePath) {
-        promptLoader.path = "" // Unload
+        promptLoader.path = ""; // Unload
         promptLoader.path = filePath; // Load
         promptLoader.reload();
     }
 
     function addMessage(message, role) {
-        if (message.length === 0) return;
+        if (message.length === 0)
+            return;
         const aiMessage = aiMessageComponent.createObject(root, {
             "role": role,
             "content": message,
             "rawContent": message,
             "thinking": false,
-            "done": true,
+            "done": true
         });
         const id = idForMessage(aiMessage);
         root.messageIDs = [...root.messageIDs, id];
@@ -464,7 +465,8 @@ Singleton {
     }
 
     function removeMessage(index) {
-        if (index < 0 || index >= messageIDs.length) return;
+        if (index < 0 || index >= messageIDs.length)
+            return;
         const id = root.messageIDs[index];
         root.messageIDs.splice(index, 1);
         root.messageIDs = [...root.messageIDs];
@@ -472,11 +474,7 @@ Singleton {
     }
 
     function addApiKeyAdvice(model) {
-        root.addMessage(
-            Translation.tr('To set an API key, pass it with the %4 command\n\nTo view the key, pass "get" with the command<br/>\n\n### For %1:\n\n**Link**: %2\n\n%3')
-                .arg(model.name).arg(model.key_get_link).arg(model.key_get_description ?? Translation.tr("<i>No further instruction provided</i>")).arg("/key"), 
-            Ai.interfaceRole
-        );
+        root.addMessage(Translation.tr('To set an API key, pass it with the %4 command\n\nTo view the key, pass "get" with the command<br/>\n\n### For %1:\n\n**Link**: %2\n\n%3').arg(model.name).arg(model.key_get_link).arg(model.key_get_description ?? Translation.tr("<i>No further instruction provided</i>")).arg("/key"), Ai.interfaceRole);
     }
 
     function getModel() {
@@ -484,28 +482,29 @@ Singleton {
     }
 
     function setModel(modelId, feedback = true, setPersistentState = true) {
-        if (!modelId) modelId = ""
-        modelId = modelId.toLowerCase()
+        if (!modelId)
+            modelId = "";
+        modelId = modelId.toLowerCase();
         if (modelList.indexOf(modelId) !== -1) {
-            const model = models[modelId]
+            const model = models[modelId];
             // See if policy prevents online models
             if (Config.options.policies.ai === 2 && !model.endpoint.includes("localhost")) {
-                root.addMessage(
-                    Translation.tr("Online models disallowed\n\nControlled by `policies.ai` config option"),
-                    root.interfaceRole
-                );
+                root.addMessage(Translation.tr("Online models disallowed\n\nControlled by `policies.ai` config option"), root.interfaceRole);
                 return;
             }
-            if (setPersistentState) Persistent.states.ai.model = modelId;
-            if (feedback) root.addMessage(Translation.tr("Model set to %1").arg(model.name), root.interfaceRole);
+            if (setPersistentState)
+                Persistent.states.ai.model = modelId;
+            if (feedback)
+                root.addMessage(Translation.tr("Model set to %1").arg(model.name), root.interfaceRole);
             if (model.requires_key) {
                 // If key not there show advice
                 if (root.apiKeysLoaded && (!root.apiKeys[model.key_id] || root.apiKeys[model.key_id].length === 0)) {
-                    root.addApiKeyAdvice(model)
+                    root.addApiKeyAdvice(model);
                 }
             }
         } else {
-            if (feedback) root.addMessage(Translation.tr("Invalid model. Supported: \n```\n") + modelList.join("\n```\n```\n"), Ai.interfaceRole) + "\n```"
+            if (feedback)
+                root.addMessage(Translation.tr("Invalid model. Supported: \n```\n") + modelList.join("\n```\n```\n"), Ai.interfaceRole) + "\n```";
         }
     }
 
@@ -517,7 +516,7 @@ Singleton {
         Config.options.ai.tool = tool;
         return true;
     }
-    
+
     function getTemperature() {
         return root.temperature;
     }
@@ -540,7 +539,7 @@ Singleton {
         }
         if (!key || key.length === 0) {
             const model = models[currentModelId];
-            root.addApiKeyAdvice(model)
+            root.addApiKeyAdvice(model);
             return;
         }
         KeyringStorage.setNestedField(["apiKeys", model.key_id], key.trim());
@@ -589,21 +588,23 @@ Singleton {
                 root.postResponseHook();
                 root.postResponseHook = null; // Reset hook after use
             }
-            root.saveChat("lastSession")
-            root.responseFinished()
+            root.saveChat("lastSession");
+            root.responseFinished();
         }
 
         function makeRequest() {
             const model = models[currentModelId];
 
             // Fetch API keys if needed
-            if (model?.requires_key && !KeyringStorage.loaded) KeyringStorage.fetchKeyringData();
-            
+            if (model?.requires_key && !KeyringStorage.loaded)
+                KeyringStorage.fetchKeyringData();
+
             requester.currentStrategy = root.currentApiStrategy;
             requester.currentStrategy.reset(); // Reset strategy state
 
             /* Put API key in environment variable */
-            if (model.requires_key) requester.environment[`${root.apiKeyEnvVarName}`] = root.apiKeys ? (root.apiKeys[model.key_id] ?? "") : ""
+            if (model.requires_key)
+                requester.environment[`${root.apiKeyEnvVarName}`] = root.apiKeys ? (root.apiKeys[model.key_id] ?? "") : "";
 
             /* Build endpoint, request data */
             const endpoint = root.currentApiStrategy.buildEndpoint(model);
@@ -613,9 +614,9 @@ Singleton {
             // console.log("[Ai] Request data: ", JSON.stringify(data, null, 2));
 
             let requestHeaders = {
-                "Content-Type": "application/json",
-            }
-            
+                "Content-Type": "application/json"
+            };
+
             /* Create local message object */
             requester.message = root.aiMessageComponent.createObject(root, {
                 "role": "assistant",
@@ -623,56 +624,51 @@ Singleton {
                 "content": "",
                 "rawContent": "",
                 "thinking": true,
-                "done": false,
+                "done": false
             });
             const id = idForMessage(requester.message);
             root.messageIDs = [...root.messageIDs, id];
             root.messageByID[id] = requester.message;
 
-            /* Build header string for curl */ 
-            let headerString = Object.entries(requestHeaders)
-                .filter(([k, v]) => v && v.length > 0)
-                .map(([k, v]) => `-H '${k}: ${v}'`)
-                .join(' ');
+            /* Build header string for curl */
+            let headerString = Object.entries(requestHeaders).filter(([k, v]) => v && v.length > 0).map(([k, v]) => `-H '${k}: ${v}'`).join(' ');
 
             // console.log("Request headers: ", JSON.stringify(requestHeaders));
             // console.log("Header string: ", headerString);
 
             /* Get authorization header from strategy */
             const authHeader = requester.currentStrategy.buildAuthorizationHeader(root.apiKeyEnvVarName);
-            
+
             /* Script shebang */
             const scriptShebang = "#!/usr/bin/env bash\n";
 
             /* Create extra setup when there's an attached file */
-            let scriptFileSetupContent = ""
+            let scriptFileSetupContent = "";
             if (root.pendingFilePath && root.pendingFilePath.length > 0) {
                 requester.message.localFilePath = root.pendingFilePath;
                 scriptFileSetupContent = requester.currentStrategy.buildScriptFileSetup(root.pendingFilePath);
-                root.pendingFilePath = ""
+                root.pendingFilePath = "";
             }
 
             /* Create command string */
-            let scriptRequestContent = ""
-            scriptRequestContent += `curl --no-buffer "${endpoint}"`
-                + ` ${headerString}`
-                + (authHeader ? ` ${authHeader}` : "")
-                + ` --data '${CF.StringUtils.shellSingleQuoteEscape(JSON.stringify(data))}'`
-                + "\n"
-            
+            let scriptRequestContent = "";
+            scriptRequestContent += `curl --no-buffer "${endpoint}"` + ` ${headerString}` + (authHeader ? ` ${authHeader}` : "") + ` --data '${CF.StringUtils.shellSingleQuoteEscape(JSON.stringify(data))}'` + "\n";
+
             /* Send the request */
-            const scriptContent = requester.currentStrategy.finalizeScriptContent(scriptShebang + scriptFileSetupContent + scriptRequestContent)
-            const shellScriptPath = CF.FileUtils.trimFileProtocol(root.requestScriptFilePath)
-            requesterScriptFile.path = Qt.resolvedUrl(shellScriptPath)
-            requesterScriptFile.setText(scriptContent)
+            const scriptContent = requester.currentStrategy.finalizeScriptContent(scriptShebang + scriptFileSetupContent + scriptRequestContent);
+            const shellScriptPath = CF.FileUtils.trimFileProtocol(root.requestScriptFilePath);
+            requesterScriptFile.path = Qt.resolvedUrl(shellScriptPath);
+            requesterScriptFile.setText(scriptContent);
             requester.command = baseCommand.concat([shellScriptPath]);
-            requester.running = true
+            requester.running = true;
         }
 
         stdout: SplitParser {
             onRead: data => {
-                if (data.length === 0) return;
-                if (requester.message.thinking) requester.message.thinking = false;
+                if (data.length === 0)
+                    return;
+                if (requester.message.thinking)
+                    requester.message.thinking = false;
                 // console.log("[Ai] Raw response line: ", data);
 
                 // Handle response line
@@ -692,7 +688,6 @@ Singleton {
                     if (result.finished) {
                         requester.markDone();
                     }
-                    
                 } catch (e) {
                     console.log("[AI] Could not parse response: ", e);
                     requester.message.rawContent += data;
@@ -703,7 +698,7 @@ Singleton {
 
         onExited: (exitCode, exitStatus) => {
             const result = requester.currentStrategy.onRequestFinished(requester.message);
-            
+
             if (result.finished) {
                 requester.markDone();
             } else if (!requester.message.done) {
@@ -718,7 +713,8 @@ Singleton {
     }
 
     function sendUserMessage(message) {
-        if (message.length === 0) return;
+        if (message.length === 0)
+            return;
         root.addMessage(message, "user");
         requester.makeRequest();
     }
@@ -728,10 +724,12 @@ Singleton {
     }
 
     function regenerate(messageIndex) {
-        if (messageIndex < 0 || messageIndex >= messageIDs.length) return;
+        if (messageIndex < 0 || messageIndex >= messageIDs.length)
+            return;
         const id = root.messageIDs[messageIndex];
         const message = root.messageByID[id];
-        if (message.role !== "assistant") return;
+        if (message.role !== "assistant")
+            return;
         // Remove all messages after this one
         for (let i = root.messageIDs.length - 1; i >= messageIndex; i--) {
             root.removeMessage(i);
@@ -747,8 +745,8 @@ Singleton {
             "functionName": name,
             "functionResponse": output,
             "thinking": false,
-            "done": true,
-            // "visibleToUser": false,
+            "done": true
+        // "visibleToUser": false,
         });
     }
 
@@ -760,13 +758,15 @@ Singleton {
     }
 
     function rejectCommand(message: AiMessageData) {
-        if (!message.functionPending) return;
+        if (!message.functionPending)
+            return;
         message.functionPending = false; // User decided, no more "thinking"
-        addFunctionOutputMessage(message.functionName, Translation.tr("Command rejected by user"))
+        addFunctionOutputMessage(message.functionName, Translation.tr("Command rejected by user"));
     }
 
     function approveCommand(message: AiMessageData) {
-        if (!message.functionPending) return;
+        if (!message.functionPending)
+            return;
         message.functionPending = false; // User decided, no more "thinking"
 
         const responseMessage = createFunctionOutputMessage(message.functionName, "", false);
@@ -787,7 +787,7 @@ Singleton {
         property string baseMessageContent: ""
         command: ["bash", "-c", shellCommand]
         stdout: SplitParser {
-            onRead: (output) => {
+            onRead: output => {
                 commandExecutionProc.message.functionResponse += output + "\n\n";
                 const updatedContent = commandExecutionProc.baseMessageContent + `\n\n<think>\n<tt>${commandExecutionProc.message.functionResponse}</tt>\n</think>`;
                 commandExecutionProc.message.rawContent = updatedContent;
@@ -803,12 +803,14 @@ Singleton {
     function handleFunctionCall(name, args: var, message: AiMessageData) {
         if (name === "switch_to_search_mode") {
             const modelId = root.currentModelId;
-            root.currentTool = "search"
-            root.postResponseHook = () => { root.currentTool = "functions" }
-            addFunctionOutputMessage(name, Translation.tr("Switched to search mode. Continue with the user's request."))
+            root.currentTool = "search";
+            root.postResponseHook = () => {
+                root.currentTool = "functions";
+            };
+            addFunctionOutputMessage(name, Translation.tr("Switched to search mode. Continue with the user's request."));
             requester.makeRequest();
         } else if (name === "get_shell_config") {
-            const configJson = CF.ObjectUtils.toPlainObject(Config.options)
+            const configJson = CF.ObjectUtils.toPlainObject(Config.options);
             addFunctionOutputMessage(name, JSON.stringify(configJson));
             requester.makeRequest();
         } else if (name === "set_shell_config") {
@@ -828,30 +830,30 @@ Singleton {
             message.rawContent += contentToAppend;
             message.content += contentToAppend;
             message.functionPending = true; // Use thinking to indicate the command is waiting for approval
-        }
-        else root.addMessage(Translation.tr("Unknown function call: %1").arg(name), "assistant");
+        } else
+            root.addMessage(Translation.tr("Unknown function call: %1").arg(name), "assistant");
     }
 
     function chatToJson() {
         return root.messageIDs.map(id => {
-            const message = root.messageByID[id]
+            const message = root.messageByID[id];
             return ({
-                "role": message.role,
-                "rawContent": message.rawContent,
-                "fileMimeType": message.fileMimeType,
-                "fileUri": message.fileUri,
-                "localFilePath": message.localFilePath,
-                "model": message.model,
-                "thinking": false,
-                "done": true,
-                "annotations": message.annotations,
-                "annotationSources": message.annotationSources,
-                "functionName": message.functionName,
-                "functionCall": message.functionCall,
-                "functionResponse": message.functionResponse,
-                "visibleToUser": message.visibleToUser,
-            })
-        })
+                    "role": message.role,
+                    "rawContent": message.rawContent,
+                    "fileMimeType": message.fileMimeType,
+                    "fileUri": message.fileUri,
+                    "localFilePath": message.localFilePath,
+                    "model": message.model,
+                    "thinking": false,
+                    "done": true,
+                    "annotations": message.annotations,
+                    "annotationSources": message.annotationSources,
+                    "functionName": message.functionName,
+                    "functionCall": message.functionCall,
+                    "functionResponse": message.functionResponse,
+                    "visibleToUser": message.visibleToUser
+                });
+        });
     }
 
     FileView {
@@ -866,9 +868,9 @@ Singleton {
      * @param chatName name of the chat
      */
     function saveChat(chatName) {
-        chatSaveFile.chatName = chatName.trim()
-        const saveContent = JSON.stringify(root.chatToJson())
-        chatSaveFile.setText(saveContent)
+        chatSaveFile.chatName = chatName.trim();
+        const saveContent = JSON.stringify(root.chatToJson());
+        chatSaveFile.setText(saveContent);
         getSavedChats.running = true;
     }
 
@@ -878,15 +880,15 @@ Singleton {
      */
     function loadChat(chatName) {
         try {
-            chatSaveFile.chatName = chatName.trim()
-            chatSaveFile.reload()
-            const saveContent = chatSaveFile.text()
+            chatSaveFile.chatName = chatName.trim();
+            chatSaveFile.reload();
+            const saveContent = chatSaveFile.text();
             // console.log(saveContent)
-            const saveData = JSON.parse(saveContent)
-            root.clearMessages()
+            const saveData = JSON.parse(saveContent);
+            root.clearMessages();
             root.messageIDs = saveData.map((_, i) => {
-                return i
-            })
+                return i;
+            });
             // console.log(JSON.stringify(messageIDs))
             for (let i = 0; i < saveData.length; i++) {
                 const message = saveData[i];
@@ -905,7 +907,7 @@ Singleton {
                     "functionName": message.functionName,
                     "functionCall": message.functionCall,
                     "functionResponse": message.functionResponse,
-                    "visibleToUser": message.visibleToUser,
+                    "visibleToUser": message.visibleToUser
                 });
             }
         } catch (e) {

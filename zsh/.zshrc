@@ -142,6 +142,10 @@ else
     alias ll="ls -la"
 fi
 
+# bat cat
+alias cat="bat --paging=never --style=plain"
+alias bat="bat --paging=never"
+
 # Docker & Docker Compose Aliases
 
 # Docker Compose

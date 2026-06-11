@@ -14,12 +14,15 @@ hl.on("hyprland.start", function()
         "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME"
     ) -- Some fix idk
 
+    hl.exec_cmd("systemctl --user start hyprland-session.target")
+
     hl.exec_cmd("vicinae server")
     hl.exec_cmd("xremap ~/.config/xremap/config.yml --watch=config,device")
 
+    hl.exec_cmd("[workspace 1 silent] zen-browser")
     hl.exec_cmd("[workspace 4 silent] spotify")
-    hl.exec_cmd("[workspace 5 silent] vesktop --start-minimized")
-    hl.exec_cmd("[workspace 6 silent] chatterino")
+    hl.exec_cmd("[workspace 5 silent] chatterino")
+    hl.exec_cmd("[workspace 6 silent] vesktop --start-minimized")
 
     -- Audio
     hl.exec_cmd("easyeffects --hide-window --service-mode")
@@ -37,4 +40,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 
     hl.exec_cmd("sleep 2 && hyprlock")
+end)
+
+hl.on("hyprland.shutdown", function()
+    -- Stop systemd graphical session target gracefully
+    hl.exec_cmd("systemctl --user stop hyprland-session.target")
 end)

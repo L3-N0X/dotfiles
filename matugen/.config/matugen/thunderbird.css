@@ -1,10 +1,10 @@
 :root {
-    --tb-bg: #191211;
-    --tb-fg: #eedfde;
-    --tb-accent: #ffb3b1;
-    --tb-accent-fg: #591a1d;
-    --tb-secondary: #623d3c;
-    --tb-border: #544342;
+    --tb-bg: #1a110f;
+    --tb-fg: #f1dfda;
+    --tb-accent: #ffb59e;
+    --tb-accent-fg: #561f0e;
+    --tb-secondary: #5d4037;
+    --tb-border: #53433f;
     --tb-warning-bg: #93000a;
     --tb-warning-fg: #ffdad6;
 }

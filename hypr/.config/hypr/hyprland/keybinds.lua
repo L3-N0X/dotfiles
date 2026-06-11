@@ -367,8 +367,8 @@ hl.bind("ALT + Tab", hl.dsp.focus({ last = true }), { description = "Window: Foc
 --# Vicinae
 --## Win + Space is vicinae
 hl.bind("SUPER + Space", hl.dsp.exec_cmd("vicinae toggle"), { description = "Toggle Vicinae" })
-hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("vicinae toggle"))
-hl.bind("SUPER + SUPER_R", hl.dsp.exec_cmd("vicinae toggle"))
+-- hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("vicinae toggle"))
+-- hl.bind("SUPER + SUPER_R", hl.dsp.exec_cmd("vicinae toggle"))
 
 --## Vicinae shortcuts do deeplinks
 hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"),

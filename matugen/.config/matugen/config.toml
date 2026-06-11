@@ -53,6 +53,7 @@ output_path = '~/.config/vesktop/themes/matugen.css'
 [templates.tmux]
 input_path = '~/.config/matugen/templates/tmux/tmux.conf'
 output_path = '~/.config/tmux/matugen-colors.conf'
+post_hook = 'tmux source-file ~/.config/tmux/matugen-colors.conf'
 
 [templates.zed]
 input_path = '~/.config/matugen/templates/zed.json'
@@ -61,3 +62,43 @@ output_path = '~/.config/zed/themes/matugen-blur.json'
 [templates.chatterino]
 input_path = '~/.config/matugen/templates/chatterino/matugen.json'
 output_path = '~/.local/share/chatterino/Themes/matugen.json'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop/matugen.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/matugen'
+post_hook = 'pkill -USR1 cava'
+
+[templates.helix]
+input_path = '~/.config/matugen/templates/helix/matugen.toml'
+output_path = '~/.config/helix/themes/matugen.toml'
+
+[templates.neovim]
+input_path = '~/.config/matugen/templates/neovim/matugen.lua'
+output_path = '~/.config/nvim/matugen.lua'
+post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.opencode]
+input_path = '~/.config/matugen/templates/opencode.json'
+output_path = '~/.config/opencode/themes/matugen.json'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi/theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.obs]
+input_path = '~/.config/matugen/templates/obs/matugen.obt'
+output_path = '~/.config/obs-studio/themes/matugen.obt'
+
+[templates.obsidian]
+input_path = '~/.config/matugen/templates/obsidian/matugen.css'
+output_path = '/home/lenox/Documents/notes/NOTES/.obsidian/snippets/matugen.css'
+
+[templates.spotify]
+input_path = '~/.config/matugen/templates/spicetify/color.ini'
+output_path = '~/.config/spicetify/Themes/Sleek/color.ini'
+post_hook = 'spicetify watch -s 2>&1 | sed "/Reloaded Spotify/q"'

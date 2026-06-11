@@ -1,1 +1,5 @@
 theme = "matugen"
+
+[editor.file-picker]
+hidden = false
+git-ignore = false

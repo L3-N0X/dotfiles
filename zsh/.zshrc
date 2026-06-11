@@ -31,8 +31,8 @@ zdharma-continuum/zinit-annex-patch-dl \
 zdharma-continuum/zinit-annex-rust
 
 # ---- ENVIRONMENT VARIABLES & PATHS --------------------------
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=helix
+export VISUAL=helix
 export PATH=$PATH:/home/lenox/.spicetify
 
 export JAVA_HOME=/usr/lib/jvm/default
@@ -141,6 +141,9 @@ else
     alias la="ls -A"
     alias ll="ls -la"
 fi
+
+# helix
+alias hx="helix"
 
 # bat cat
 alias cat="bat --paging=never --style=plain"
@@ -253,7 +256,7 @@ alias grbi='git rebase -i'
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
-alias e='nvim'
+alias e='$EDITOR'
 alias ee="sudoedit"
 alias cd='z'
 

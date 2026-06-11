@@ -1,19 +1,19 @@
-# Helix Theme Template using Material You with improved contrast
+# Helix Theme Template using Material You with optimized contrast and distinct UI roles
 
 # --- Syntax Elements ---
 
-"attribute" = "{{ colors.primary.default.hex }}"
-"type" = "{{ colors.secondary.default.hex }}"
-"type.enum.variant" = "{{ colors.secondary.default.hex }}"
-"constructor" = "{{ colors.primary_fixed.default.hex }}"
+"attribute" = "{{ colors.secondary_fixed.default.hex }}"
+"type" = "{{ colors.inverse_primary.default.hex }}"
+"type.enum.variant" = "{{ colors.inverse_primary.default.hex }}"
+"constructor" = "{{ colors.tertiary_fixed.default.hex }}"
 
-"constant" = "{{ colors.tertiary.default.hex }}"
-"constant.character" = "{{ colors.tertiary.default.hex }}"
+"constant" = "{{ colors.primary_fixed.default.hex }}"
+"constant.character" = "{{ colors.primary_fixed.default.hex }}"
 "constant.character.escape" = "{{ colors.tertiary_container.default.hex }}"
 
-"string" = "{{ colors.primary.default.hex }}"
+"string" = "{{ colors.secondary.default.hex }}"
 "string.regexp" = "{{ colors.tertiary_container.default.hex }}"
-"string.special" = "{{ colors.primary_fixed.default.hex }}"
+"string.special" = "{{ colors.tertiary_fixed.default.hex }}"
 "string.special.symbol" = "{{ colors.error.default.hex }}"
 
 "comment" = { fg = "{{ colors.on_surface_variant.default.hex }}", modifiers = ["italic"] }
@@ -21,9 +21,9 @@
 "variable" = "{{ colors.on_background.default.hex }}"
 "variable.parameter" = { fg = "{{ colors.error_container.default.hex }}", modifiers = ["italic"] }
 "variable.builtin" = "{{ colors.error.default.hex }}"
-"variable.other.member" = "{{ colors.primary.default.hex }}"
+"variable.other.member" = "{{ colors.primary_fixed_dim.default.hex }}"
 
-"label" = "{{ colors.primary_fixed.default.hex }}"
+"label" = "{{ colors.tertiary_fixed.default.hex }}"
 
 "punctuation" = "{{ colors.on_surface_variant.default.hex }}"
 "punctuation.special" = "{{ colors.secondary.default.hex }}"
@@ -31,15 +31,15 @@
 "keyword" = "{{ colors.primary.default.hex }}"
 "keyword.control.conditional" = { fg = "{{ colors.primary.default.hex }}", modifiers = ["italic"] }
 
-"operator" = "{{ colors.secondary.default.hex }}"
+"operator" = "{{ colors.outline.default.hex }}"
 
-"function" = "{{ colors.primary.default.hex }}"
+"function" = "{{ colors.tertiary.default.hex }}"
 "function.macro" = "{{ colors.primary_container.default.hex }}"
 
 "tag" = "{{ colors.primary.default.hex }}"
-"namespace" = { fg = "{{ colors.secondary.default.hex }}", modifiers = ["italic"] }
+"namespace" = { fg = "{{ colors.inverse_primary.default.hex }}", modifiers = ["italic"] }
 
-"special" = "{{ colors.primary.default.hex }}"
+"special" = "{{ colors.tertiary.default.hex }}"
 
 # --- Markup ---
 
@@ -74,13 +74,15 @@
 "ui.background" = { fg = "{{ colors.on_background.default.hex }}", bg = "none" }
 
 "ui.linenr" = { fg = "{{ colors.on_surface_variant.default.hex }}" }
-"ui.linenr.selected" = { fg = "{{ colors.primary_fixed.default.hex }}" }
+"ui.linenr.selected" = { fg = "{{ colors.primary.default.hex }}" }
 
-"ui.statusline" = { fg = "{{ colors.on_primary_container.default.hex }}", bg = "none" }
-"ui.statusline.inactive" = { fg = "{{ colors.on_surface_variant.default.hex }}", bg = "none" }
-"ui.statusline.normal" = { fg = "{{ colors.background.default.hex }}", bg = "none", modifiers = ["bold"] }
-"ui.statusline.insert" = { fg = "{{ colors.background.default.hex }}", bg = "none", modifiers = ["bold"] }
-"ui.statusline.select" = { fg = "{{ colors.background.default.hex }}", bg = "none", modifiers = ["bold"] }
+"ui.statusline" = { fg = "{{ colors.on_surface_variant.default.hex }}", bg = "none" }
+"ui.statusline.inactive" = { fg = "{{ colors.outline.default.hex }}", bg = "none" }
+
+# High contrast block indicators for modal states
+"ui.statusline.normal" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "{{ colors.on_secondary.default.hex }}", bg = "{{ colors.secondary.default.hex }}", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "{{ colors.on_tertiary.default.hex }}", bg = "{{ colors.tertiary.default.hex }}", modifiers = ["bold"] }
 
 "ui.popup" = { fg = "{{ colors.on_surface.default.hex }}", bg = "none" }
 "ui.window" = { fg = "{{ colors.on_surface_variant.default.hex }}" }
@@ -101,11 +103,22 @@
 "ui.virtual.inlay-hint" = { fg = "{{ colors.on_surface_variant.default.hex }}", bg = "none" }
 "ui.virtual.jump-label" = { fg = "{{ colors.primary_container.default.hex }}", modifiers = ["bold"] }
 
-"ui.selection" = { bg = "{{ colors.outline_variant.default.hex }}" }
+# Selection differentiation
+"ui.selection" = { bg = "{{ colors.surface_container_highest.default.hex }}" }
+"ui.selection.primary" = { bg = "{{ colors.primary_container.default.hex }}" }
 
-"ui.cursor" = { fg = "{{ colors.background.default.hex }}", bg = "{{ colors.on_primary_container.default.hex }}" }
-"ui.cursor.primary" = { fg = "{{ colors.background.default.hex }}", bg = "{{ colors.primary_fixed.default.hex }}" }
-"ui.cursor.match" = { fg = "{{ colors.on_primary_container.default.hex }}", modifiers = ["bold"] }
+# Multi-state cursor mappings to completely eliminate anchor/head blending
+"ui.cursor" = { fg = "{{ colors.surface.default.hex }}", bg = "{{ colors.on_surface.default.hex }}" }
+"ui.cursor.normal" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}" }
+"ui.cursor.insert" = { fg = "{{ colors.on_secondary.default.hex }}", bg = "{{ colors.secondary.default.hex }}" }
+"ui.cursor.select" = { fg = "{{ colors.on_tertiary.default.hex }}", bg = "{{ colors.tertiary.default.hex }}" }
+
+"ui.cursor.primary" = { fg = "{{ colors.surface.default.hex }}", bg = "{{ colors.on_surface.default.hex }}", modifiers = ["bold"] }
+"ui.cursor.primary.normal" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}", modifiers = ["bold"] }
+"ui.cursor.primary.insert" = { fg = "{{ colors.on_secondary.default.hex }}", bg = "{{ colors.secondary.default.hex }}", modifiers = ["bold"] }
+"ui.cursor.primary.select" = { fg = "{{ colors.on_tertiary.default.hex }}", bg = "{{ colors.tertiary.default.hex }}", modifiers = ["bold"] }
+
+"ui.cursor.match" = { bg = "{{ colors.secondary_container.default.hex }}", modifiers = ["bold"] }
 
 "ui.highlight" = { bg = "{{ colors.secondary_container.default.hex }}", modifiers = ["bold"] }
 

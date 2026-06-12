@@ -107,3 +107,8 @@ post_hook = 'spicetify watch -s 2>&1 | sed "/Reloaded Spotify/q"'
 input_path = '~/.config/matugen/templates/zellij/matugen.kdl'
 output_path = '~/.config/zellij/themes/matugen.kdl'
 post_hook = 'touch ~/.config/zellij/config.kdl'
+
+[templates.zellij-layout]
+input_path = '~/.config/matugen/templates/zellij/minimalist.kdl'
+output_path = '~/.config/zellij/layouts/minimalist.kdl'
+post_hook = 'touch ~/.config/zellij/config.kdl'

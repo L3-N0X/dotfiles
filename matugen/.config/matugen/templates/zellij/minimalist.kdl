@@ -1,0 +1,44 @@
+layout {
+    default_tab_template {
+
+        // 1. Transparent TOP BAR: Session & Dynamic Windows
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                // Uses primary color for session title, and on_surface_variant for structural dividers
+                format_left  "#[fg={{colors.primary.dark.hex}},bold] {session} #[fg={{colors.secondary.dark.hex}}]❘ {tabs}"
+                format_space ""
+
+                border_enabled  "false"
+
+                // Window Tab Styling
+                tab_normal              "#[fg={{colors.on_surface.dark.hex}}] {index} #[fg={{colors.secondary.dark.hex}}] #[fg={{colors.tertiary.default.hex}}]{name} "
+                tab_active              "#[fg={{colors.primary.dark.hex}},bold,underline] {index} #[fg={{colors.secondary.dark.hex}}] #[fg={{colors.tertiary.default.hex}}]{name} "
+                tab_fullscreen          "#[fg={{colors.error.dark.hex}},bold] [{name}] "
+                tab_sync                "#[fg={{colors.secondary.dark.hex}},bold] <{name}> "
+            }
+        }
+
+        // 2. Core Workspace
+        children
+
+        // 3. Transparent BOTTOM BAR: Dynamic System Modes & Detailed Keybinds
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                format_left  "{mode}"
+                format_space ""
+
+                border_enabled  "false"
+
+                // Complete text layout using on_surface for descriptions and accent colors for status flags
+                mode_normal        "#[fg={{colors.primary.dark.hex}},bold] ⚡ #[fg={{colors.on_surface.dark.hex}}]p pane #[fg={{colors.primary.dark.hex}},bold]/ #[fg={{colors.on_surface.dark.hex}}]t tab #[fg={{colors.primary.dark.hex}},bold]/ #[fg={{colors.on_surface.dark.hex}}]n resize #[fg={{colors.primary.dark.hex}},bold]/ #[fg={{colors.on_surface.dark.hex}}]h move #[fg={{colors.primary.dark.hex}},bold]/ #[fg={{colors.on_surface.dark.hex}}]s scroll #[fg={{colors.primary.dark.hex}},bold]/ #[fg={{colors.on_surface.dark.hex}}]o session #[fg={{colors.primary.dark.hex}},bold]/ #[fg={{colors.on_surface.dark.hex}}]󰘴q quit"
+                mode_locked        "#[fg={{colors.primary.dark.hex}},bold]  #[fg={{colors.on_surface_variant.dark.hex}}]󰘴g"
+                mode_pane          "#[fg={{colors.tertiary.dark.hex}},bold] PANE #[fg={{colors.secondary.dark.hex}}]/ #[fg={{colors.on_surface.dark.hex}}]n new / x close / f floating / r rename / p pin / h/j/k/l move focus"
+                mode_tab           "#[fg={{colors.primary.dark.hex}},bold] TAB #[fg={{colors.secondary.dark.hex}}]/ #[fg={{colors.on_surface.dark.hex}}]n new / x close / r rename / h/l change focus / s sync"
+                mode_resize        "#[fg={{colors.primary.dark.hex}},bold] RESIZE #[fg={{colors.secondary.dark.hex}}]/ #[fg={{colors.on_surface.dark.hex}}]h/j/k/l: Adjust Size • + / -: Scale"
+                mode_move          "#[fg={{colors.primary.dark.hex}},bold] MOVE #[fg={{colors.secondary.dark.hex}}]/ #[fg={{colors.on_surface.dark.hex}}]h/j/k/l: Swap Pane Position"
+                mode_scroll        "#[fg={{colors.tertiary.dark.hex}},bold] SCROLL #[fg={{colors.secondary.dark.hex}}]/ #[fg={{colors.on_surface.dark.hex}}]e: Edit Buffer • /: Search • j/k: Line Up/Down • G: Bottom"
+                mode_session       "#[fg={{colors.secondary.dark.hex}},bold] SESSION #[fg={{colors.secondary.dark.hex}}]/ #[fg={{colors.on_surface.dark.hex}}]d: Detach • w: Session Manager"
+            }
+        }
+    }
+}

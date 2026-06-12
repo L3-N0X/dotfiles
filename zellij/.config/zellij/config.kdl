@@ -271,7 +271,7 @@ web_client {
 //   - true
 //   - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Enable OSC8 hyperlink output
 // Options:
@@ -312,7 +312,7 @@ default_mode "locked"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "default"
+default_layout "minimalist"
 
 // The folder in which Zellij will look for layouts
 // (Requires restart)

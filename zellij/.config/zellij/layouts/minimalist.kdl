@@ -30,7 +30,7 @@ layout {
                 border_enabled  "false"
 
                 // Complete text layout using on_surface for descriptions and accent colors for status flags
-                mode_normal        "#[fg=#ffb59e,bold] ⚡ #[fg=#f1dfda]p pane #[fg=#ffb59e,bold]/ #[fg=#f1dfda]t tab #[fg=#ffb59e,bold]/ #[fg=#f1dfda]n resize #[fg=#ffb59e,bold]/ #[fg=#f1dfda]h move #[fg=#ffb59e,bold]/ #[fg=#f1dfda]s scroll #[fg=#ffb59e,bold]/ #[fg=#f1dfda]o session #[fg=#ffb59e,bold]/ #[fg=#f1dfda]q quit"
+                mode_normal        "#[fg=#ffb59e,bold] ⚡ #[fg=#f1dfda]p pane #[fg=#ffb59e,bold]/ #[fg=#f1dfda]t tab #[fg=#ffb59e,bold]/ #[fg=#f1dfda]n resize #[fg=#ffb59e,bold]/ #[fg=#f1dfda]h move #[fg=#ffb59e,bold]/ #[fg=#f1dfda]s scroll #[fg=#ffb59e,bold]/ #[fg=#f1dfda]o session #[fg=#ffb59e,bold]/ #[fg=#f1dfda]󰘴q quit"
                 mode_locked        "#[fg=#ffb59e,bold]  #[fg=#d8c2bc]󰘴g"
                 mode_pane          "#[fg=#d8c68d,bold] PANE #[fg=#e7bdb1]/ #[fg=#f1dfda]n new / x close / f floating / r rename / p pin / h/j/k/l move focus"
                 mode_tab           "#[fg=#ffb59e,bold] TAB #[fg=#e7bdb1]/ #[fg=#f1dfda]n new / x close / r rename / h/l change focus / s sync"

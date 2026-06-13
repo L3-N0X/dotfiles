@@ -73,6 +73,11 @@ Item { // Notification item area
         onClicked: (mouse) => {
             if (mouse.button === Qt.MiddleButton) {
                 root.destroyWithAnimation();
+            } else if (mouse.button === Qt.LeftButton) {
+                const defaultAction = root.notificationObject.actions.find(a => a.identifier === "default");
+                if (defaultAction) {
+                    Notifications.attemptInvokeAction(root.notificationObject.notificationId, "default");
+                }
             }
         }
 

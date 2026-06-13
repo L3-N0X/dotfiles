@@ -1,7 +1,7 @@
 MenuBar=Disabled
 
 [DetailsMode]
-PreviewSize=32
+PreviewSize=22
 
 [General]
 GlobalViewProps=false
@@ -18,3 +18,6 @@ Places Icons Static Size=22
 
 [PreviewSettings]
 Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,gsf-office
+
+[UiSettings]
+ColorScheme=MaterialYouDark

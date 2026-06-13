@@ -91,8 +91,19 @@ MouseArea { // Notification group area
         }
 
         onClicked: (mouse) => {
-            if (mouse.button === Qt.MiddleButton) 
+            if (mouse.button === Qt.MiddleButton) {
                 root.destroyWithAnimation();
+            } else if (mouse.button === Qt.LeftButton) {
+                if (root.notificationCount === 1) {
+                    const notif = root.notifications[0];
+                    const defaultAction = notif.actions.find(a => a.identifier === "default");
+                    if (defaultAction) {
+                        Notifications.attemptInvokeAction(notif.notificationId, "default");
+                        return;
+                    }
+                }
+                root.toggleExpanded();
+            }
         }
 
         onDraggingChanged: () => {

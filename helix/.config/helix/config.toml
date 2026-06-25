@@ -3,3 +3,20 @@ theme = "matugen"
 [editor.file-picker]
 hidden = false
 git-ignore = false
+
+[keys.normal]
+"C-s" = ":w"           # Binds Ctrl+S to save the file
+
+[keys.normal.space]
+m = "save_selection"   # Rebinds the original C-s behavior (jumplist mark) to Space + m
+
+[keys.insert]
+"C-s" = ["normal_mode", ":w"] # Exits to normal mode, then saves the file
+
+[keys.normal]
+"A-j" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+"A-k" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+[keys.select]
+"A-j" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+"A-k" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]

@@ -2,7 +2,7 @@ modmap:
   # Minecraft
   - name: Minecraft Sprint Override
     application:
-      only: "Minecraft"
+      only: "com.mojang.minecraft"
     remap:
       CAPSLOCK: CTRL_L
 
@@ -16,3 +16,17 @@ modmap:
       GRAVE: ESC
       ALT_L: SUPER_L
       CAPSLOCK: ALT_L
+
+# Dolphin Right Click Shortcut
+keymap:
+  # - name: Global Sanity Check
+  #   application:
+  #     only: "org.kde.dolphin"
+  #   remap:
+  #     Alt_R: VolumeUp
+
+  - name: Dolphin Right Click Shortcut
+    application:
+      only: "org.kde.dolphin"
+    remap:
+      C-z: Shift-F10

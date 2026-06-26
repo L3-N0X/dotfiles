@@ -260,6 +260,8 @@ alias e='$EDITOR'
 alias ee="sudoedit"
 alias cd='z'
 
+alias sshk='kitty +kitten ssh'
+
 # Zed EDITOR
 alias zed="zeditor"
 

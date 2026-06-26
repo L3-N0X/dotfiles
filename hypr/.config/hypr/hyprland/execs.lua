@@ -6,6 +6,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("$HOME/.config/hypr/custom/scripts/__restore_video_wallpaper.sh")
 
     -- Core components (authentication, lock screen, notification daemon)
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME")
@@ -22,6 +23,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("[workspace 1 silent] zen-browser")
     hl.exec_cmd("[workspace 4 silent] chatterino")
     hl.exec_cmd("[workspace 6 silent] vesktop --start-minimized")
+    hl.exec_cmd("[workspace 7 silent] thunderbird")
 
     -- Audio
     hl.exec_cmd("easyeffects --hide-window --service-mode")

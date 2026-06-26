@@ -310,3 +310,5 @@ hl.config({
 --     name = "rustdesk-uinput-keyboard",
 --     kb_options = "caps:ctrl_modifier,altwin:swap_alt_win"
 -- })
+
+--hl.config({ ecosystem = { enforce_permissions = true } })

@@ -1,0 +1,52 @@
+@OBSThemeMeta {
+    name: 'Matugen';
+    id: 'com.obsproject.Catppuccin.Matugen';
+    extends: 'com.obsproject.Catppuccin';
+    author: 'L3-N0X';
+    dark: 'true';
+}
+
+@OBSThemeVars {
+    /* Accent & Brand Colors mapped to Material Accents */
+    --ctp_rosewater: {{colors.primary_fixed.default.hex}};
+    --ctp_flamingo: {{colors.secondary_fixed.default.hex}};
+    --ctp_pink: {{colors.tertiary.default.hex}};
+    --ctp_mauve: {{colors.primary.default.hex}};
+    --ctp_red: {{colors.error.default.hex}};
+    --ctp_maroon: {{colors.error_container.default.hex}};
+    --ctp_peach: {{colors.primary_fixed_dim.default.hex}};
+    --ctp_yellow: {{colors.tertiary_fixed.default.hex}};
+    --ctp_green: {{colors.tertiary.default.hex}};
+    --ctp_teal: {{colors.secondary.default.hex}};
+    --ctp_sky: {{colors.primary_fixed.default.hex}};
+    --ctp_sapphire: {{colors.primary_container.default.hex}};
+    --ctp_blue: {{colors.primary.default.hex}};
+    --ctp_lavender: {{colors.secondary.default.hex}};
+
+    /* Text & Typography Hierarchy */
+    --ctp_text: {{colors.on_surface.default.hex}};
+    --ctp_subtext1: {{colors.on_surface_variant.default.hex}};
+    --ctp_subtext0: {{colors.outline.default.hex}};
+
+    /* Overlays and Borders */
+    --ctp_overlay2: {{colors.outline.default.hex}};
+    --ctp_overlay1: {{colors.outline_variant.default.hex}};
+    --ctp_overlay0: {{colors.surface_variant.default.hex}};
+
+    /* UI Surfaces (Lowest to Highest Depth) */
+    --ctp_surface2: {{colors.surface_container_highest.default.hex}};
+    --ctp_surface1: {{colors.surface_container_high.default.hex}};
+    --ctp_surface0: {{colors.surface_container.default.hex}};
+    --ctp_base: {{colors.surface_container_low.default.hex}};
+    --ctp_mantle: {{colors.background.default.hex}};
+    --ctp_crust: {{colors.surface_container_lowest.default.hex}};
+
+    /* Interactive States */
+    --ctp_selection_background: {{colors.secondary_container.default.hex}};
+}
+
+VolumeMeter {
+    qproperty-foregroundNominalColor: {{colors.tertiary.default.hex}};
+    qproperty-foregroundWarningColor: {{colors.tertiary_container.default.hex}};
+    qproperty-foregroundErrorColor:   {{colors.error.default.hex}};
+}

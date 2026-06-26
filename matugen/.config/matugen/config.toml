@@ -91,8 +91,8 @@ input_path = '~/.config/matugen/templates/yazi/theme.toml'
 output_path = '~/.config/yazi/theme.toml'
 
 [templates.obs]
-input_path = '~/.config/matugen/templates/obs/matugen.obt'
-output_path = '~/.config/obs-studio/themes/matugen.obt'
+input_path = '~/.config/matugen/templates/obs/matugen.ovt'
+output_path = '~/.config/obs-studio/themes/matugen.ovt'
 
 [templates.obsidian]
 input_path = '~/.config/matugen/templates/obsidian/matugen.css'

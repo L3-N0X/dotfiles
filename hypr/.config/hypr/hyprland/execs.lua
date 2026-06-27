@@ -23,7 +23,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("[workspace 1 silent] zen-browser")
     hl.exec_cmd("[workspace 4 silent] chatterino")
     hl.exec_cmd("[workspace 6 silent] vesktop --start-minimized")
-    hl.exec_cmd("[workspace 7 silent] thunderbird")
+    -- hl.exec_cmd("[workspace 7 silent] thunderbird")
 
     -- Audio
     hl.exec_cmd("easyeffects --hide-window --service-mode")

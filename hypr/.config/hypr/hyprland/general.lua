@@ -254,7 +254,10 @@ hl.config({
         repeat_delay = 250,
         repeat_rate = 35,
 
-        sensitivity = -0.28,
+        -- sensitivity = -0.28,
+        sensitivity = 0,
+        accel_profile = "flat",
+        force_no_accel = true,
         follow_mouse = 1,
         off_window_axis_events = 2,
 
@@ -292,7 +295,10 @@ hl.config({
         zoom_factor = 1,
         zoom_rigid = false,
         zoom_disable_aa = true,
-        hotspot_padding = 1
+        hotspot_padding = 1,
+        -- no_hardware_cursors = 2,
+        -- warp_on_change_workspace = false,
+        -- no_warps = true
     },
 
     xwayland = {

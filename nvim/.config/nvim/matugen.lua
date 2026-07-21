@@ -2,23 +2,23 @@
 -- 1. BASE16 PALETTE INITIALIZATION
 -- ==========================================================================
 require('base16-colorscheme').setup({
-    base00 = "#1a110f",
-    base01 = "#140c0a",
-    base02 = "#231917",
-    base03 = "#53433f",
-    base04 = "#d8c2bc",
-    base05 = "#f1dfda",
-    base06 = "#392e2b",
-    base07 = "#423734",
+    base00 = "#11140f",
+    base01 = "#0b0f0a",
+    base02 = "#191d17",
+    base03 = "#43483f",
+    base04 = "#c3c8bc",
+    base05 = "#e1e4da",
+    base06 = "#2e322b",
+    base07 = "#363a34",
 
-    base08 = "#d2bd7a",
-    base09 = "#d8c68d",
-    base0A = "#e7bdb1",
-    base0B = "#ffb59e",
-    base0C = "#52461a",
-    base0D = "#723521",
-    base0E = "#5d4037",
-    base0F = "#db9c8a",
+    base08 = "#8fc6ca",
+    base09 = "#a0cfd2",
+    base0A = "#bbcbb2",
+    base0B = "#a4d396",
+    base0C = "#1e4d51",
+    base0D = "#285021",
+    base0E = "#3c4b37",
+    base0F = "#a0b694",
 })
 
 -- ==========================================================================
@@ -51,28 +51,28 @@ end
 
 -- Visual selection (Kept dark rust so highlighted text is readable)
 vim.api.nvim_set_hl(0, 'Visual', {
-    bg = '#723521',
-    fg = '#ffdbd0',
+    bg = '#285021',
+    fg = '#c0efb0',
 })
 
 -- Strings (Boosted brightness slightly)
 set_hl_multiple({ 'String', 'TSString' }, {
-    fg = '#e5d9b3',
+    fg = '#c3e0e2',
 })
 
 -- Comments (Using on_surface_variant instead of outline for better legibility)
 set_hl_multiple({ 'TSComment', 'Comment' }, {
-    fg = '#d8c2bc',
+    fg = '#c3c8bc',
     italic = true,
 })
 
 -- Methods & Functions
-set_hl_multiple({ 'TSMethod', 'Method' }, { fg = '#d8c68d' })
-set_hl_multiple({ 'TSFunction', 'Function' }, { fg = '#e7bdb1' })
+set_hl_multiple({ 'TSMethod', 'Method' }, { fg = '#a0cfd2' })
+set_hl_multiple({ 'TSFunction', 'Function' }, { fg = '#bbcbb2' })
 
 -- KEYWORD FIX: Swapped from inverse_primary to primary + lighten
 -- This gives keywords a vivid, high-contrast pop against dark terminals
 set_hl_multiple({ 'Keyword', 'TSKeyword', 'TSKeywordFunction', 'TSRepeat' }, {
-    fg = '#ffefeb',
+    fg = '#d3eacc',
     bold = true, -- Added bold to make control flow stand out
 })

@@ -5,16 +5,16 @@ layout {
         pane size=1 borderless=true {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
                 // Uses primary color for session title, and on_surface_variant for structural dividers
-                format_left  "#[fg=#ffb59e,bold] {session} #[fg=#e7bdb1]❘ {tabs}"
+                format_left  "#[fg=#a4d396,bold] {session} #[fg=#bbcbb2]❘ {tabs}"
                 format_space ""
 
                 border_enabled  "false"
 
                 // Window Tab Styling
-                tab_normal              "#[fg=#f1dfda] {index} #[fg=#e7bdb1] #[fg=#d8c68d]{name} "
-                tab_active              "#[fg=#ffb59e,bold,underline] {index} #[fg=#e7bdb1] #[fg=#d8c68d]{name} "
+                tab_normal              "#[fg=#e1e4da] {index} #[fg=#bbcbb2] #[fg=#a0cfd2]{name} "
+                tab_active              "#[fg=#a4d396,bold,underline] {index} #[fg=#bbcbb2] #[fg=#a0cfd2]{name} "
                 tab_fullscreen          "#[fg=#ffb4ab,bold] [{name}] "
-                tab_sync                "#[fg=#e7bdb1,bold] <{name}> "
+                tab_sync                "#[fg=#bbcbb2,bold] <{name}> "
             }
         }
 
@@ -30,14 +30,14 @@ layout {
                 border_enabled  "false"
 
                 // Complete text layout using on_surface for descriptions and accent colors for status flags
-                mode_normal        "#[fg=#ffb59e,bold] ⚡ #[fg=#f1dfda]p pane #[fg=#ffb59e,bold]/ #[fg=#f1dfda]t tab #[fg=#ffb59e,bold]/ #[fg=#f1dfda]n resize #[fg=#ffb59e,bold]/ #[fg=#f1dfda]h move #[fg=#ffb59e,bold]/ #[fg=#f1dfda]s scroll #[fg=#ffb59e,bold]/ #[fg=#f1dfda]o session #[fg=#ffb59e,bold]/ #[fg=#f1dfda]󰘴q quit"
-                mode_locked        "#[fg=#ffb59e,bold]  #[fg=#d8c2bc]󰘴g"
-                mode_pane          "#[fg=#d8c68d,bold] PANE #[fg=#e7bdb1]/ #[fg=#f1dfda]n new / x close / f floating / r rename / p pin / h/j/k/l move focus"
-                mode_tab           "#[fg=#ffb59e,bold] TAB #[fg=#e7bdb1]/ #[fg=#f1dfda]n new / x close / r rename / h/l change focus / s sync"
-                mode_resize        "#[fg=#ffb59e,bold] RESIZE #[fg=#e7bdb1]/ #[fg=#f1dfda]h/j/k/l: Adjust Size • + / -: Scale"
-                mode_move          "#[fg=#ffb59e,bold] MOVE #[fg=#e7bdb1]/ #[fg=#f1dfda]h/j/k/l: Swap Pane Position"
-                mode_scroll        "#[fg=#d8c68d,bold] SCROLL #[fg=#e7bdb1]/ #[fg=#f1dfda]e: Edit Buffer • /: Search • j/k: Line Up/Down • G: Bottom"
-                mode_session       "#[fg=#e7bdb1,bold] SESSION #[fg=#e7bdb1]/ #[fg=#f1dfda]d: Detach • w: Session Manager"
+                mode_normal        "#[fg=#a4d396,bold] ⚡ #[fg=#e1e4da]p pane #[fg=#a4d396,bold]/ #[fg=#e1e4da]t tab #[fg=#a4d396,bold]/ #[fg=#e1e4da]n resize #[fg=#a4d396,bold]/ #[fg=#e1e4da]h move #[fg=#a4d396,bold]/ #[fg=#e1e4da]s scroll #[fg=#a4d396,bold]/ #[fg=#e1e4da]o session #[fg=#a4d396,bold]/ #[fg=#e1e4da]󰘴q quit"
+                mode_locked        "#[fg=#a4d396,bold]  #[fg=#c3c8bc]󰘴g"
+                mode_pane          "#[fg=#a0cfd2,bold] PANE #[fg=#bbcbb2]/ #[fg=#e1e4da]n new / x close / f floating / r rename / p pin / h/j/k/l move focus"
+                mode_tab           "#[fg=#a4d396,bold] TAB #[fg=#bbcbb2]/ #[fg=#e1e4da]n new / x close / r rename / h/l change focus / s sync"
+                mode_resize        "#[fg=#a4d396,bold] RESIZE #[fg=#bbcbb2]/ #[fg=#e1e4da]h/j/k/l: Adjust Size • + / -: Scale"
+                mode_move          "#[fg=#a4d396,bold] MOVE #[fg=#bbcbb2]/ #[fg=#e1e4da]h/j/k/l: Swap Pane Position"
+                mode_scroll        "#[fg=#a0cfd2,bold] SCROLL #[fg=#bbcbb2]/ #[fg=#e1e4da]e: Edit Buffer • /: Search • j/k: Line Up/Down • G: Bottom"
+                mode_session       "#[fg=#bbcbb2,bold] SESSION #[fg=#bbcbb2]/ #[fg=#e1e4da]d: Detach • w: Session Manager"
             }
         }
     }

@@ -55,6 +55,11 @@ input_path = '~/.config/matugen/templates/tmux/tmux.conf'
 output_path = '~/.config/tmux/matugen-colors.conf'
 post_hook = 'tmux source-file ~/.config/tmux/matugen-colors.conf'
 
+[templates.herdr]
+input_path = '~/.config/matugen/templates/herdr/config.toml'
+output_path = '~/.config/herdr/config.toml'
+post_hook = 'herdr server reload-config'
+
 [templates.zed]
 input_path = '~/.config/matugen/templates/zed.json'
 output_path = '~/.config/zed/themes/matugen-blur.json'
@@ -89,6 +94,7 @@ output_path = '~/.config/opencode/themes/matugen.json'
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi/theme.toml'
 output_path = '~/.config/yazi/theme.toml'
+
 
 [templates.obs]
 input_path = '~/.config/matugen/templates/obs/matugen.ovt'

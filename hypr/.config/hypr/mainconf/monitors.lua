@@ -1,7 +1,7 @@
 local monitors = {
     { output = "eDP-1",                                width = 1920, height = 1080, hz = 144, scale = 1.25 },
     { output = "HDMI-A-1",                             width = 1920, height = 1080, hz = 60,  scale = 1 },
-    { output = "desc:Synaptics Inc Non-PnP 0x00BC614", width = 1920, height = 1080, hz = 60,  scale = 2 }
+    { output = "desc:Synaptics Inc Non-PnP 0x00BC614", width = 1920, height = 1080, hz = 60,  scale = 1.5 }
     -- desc:AOC 2475W MDMHAJA004705
     -- desc:Ancor Communications Inc ASUS VS247 F8LMTF10236
 }

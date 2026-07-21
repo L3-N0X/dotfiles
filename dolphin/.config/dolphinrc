@@ -1,14 +1,13 @@
 [DetailsMode]
-PreviewSize=22
+PreviewSize=32
 
 [General]
-GlobalViewProps=false
 ShowFullPath=true
 ShowStatusBar=FullWidth
 Version=202
 
 [IconsMode]
-PreviewSize=256
+PreviewSize=192
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false

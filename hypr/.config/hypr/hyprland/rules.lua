@@ -171,3 +171,18 @@ hl.layer_rule({ match = { namespace = "vicinae" }, ignore_alpha = 0.5 })
 
 -- Launchers need to be FAST
 hl.layer_rule({ match = { namespace = "gtk4-layer-shell" }, no_anim = true })
+
+-- Block OnlyOffice from fighting over focus loops
+hl.window_rule({
+    match = { class = "ONLYOFFICE" },
+    no_follow_mouse = true,
+    focus_on_activate = false,
+    suppress_event = "activate activatefocus"
+})
+
+-- hl.window_rule({
+--     match = {
+--         class = "^com%.mojang%.minecraft$"
+--     },
+--     fullscreen_state = "0 2"
+-- })

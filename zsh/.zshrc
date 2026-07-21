@@ -265,6 +265,9 @@ alias sshk='kitty +kitten ssh'
 # Zed EDITOR
 alias zed="zeditor"
 
+# Expo Tailscale
+alias expo-tailscale='REACT_NATIVE_PACKAGER_HOSTNAME=$(tailscale ip -4) npx expo'
+
 # Config Upkeep & Dotfiles
 alias reload="source ~/.zshrc && echo 'Zsh config reloaded successfully!'"
 alias valac="nvim ~/.config/alacritty/alacritty.toml"
@@ -276,3 +279,10 @@ alias setjava="sudo archlinux-java set"
 # Added by Antigravity CLI installer
 export PATH="/home/lenox/.local/bin:$PATH"
 export PATH="/home/lenox/.local/bin:$PATH"
+export PATH="$HOME/.local/share/pnpm:$PATH"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<

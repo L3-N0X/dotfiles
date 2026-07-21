@@ -375,3 +375,12 @@ hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history
     { description = "Vicinae: Clipboard history" })
 hl.bind("SUPER + Period", hl.dsp.exec_cmd("vicinae vicinae://launch/core/search-emojis"),
     { description = "Vicinae: Emoji picker" })
+
+hl.bind("SUPER + End", function()
+  hl.timer(function()
+    hl.dispatch(hl.dsp.dpms({ action = "toggle" }))
+  end, { timeout = 500, type = "oneshot" })
+end)
+
+-- Noti
+hl.bind("SUPER + B", hl.dsp.exec_cmd("noti"), { description = "App: Notes" })

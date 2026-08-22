@@ -2,8 +2,8 @@ local home_dir = os.getenv("HOME")
 
 -- Wayland
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-hl.env("WEBKIT_DISABLE_DMABUF_RENDERER", "1")
-
+hl.env("WEBKIT_DISABLE_DMABUF_RENDERER", "0")
+hl.env("__NV_DISABLE_EXPLICIT_SYNC", "1")
 -- Applications
 local xdg_data_dirs_old = os.getenv("XDG_DATA_DIRS") or ""
 hl.env("XDG_DATA_DIRS",

@@ -80,8 +80,8 @@
 "ui.statusline.inactive" = { fg = "{{ colors.outline.default.hex }}", bg = "none" }
 
 # High contrast block indicators for modal states
-"ui.statusline.normal" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}", modifiers = ["bold"] }
-"ui.statusline.insert" = { fg = "{{ colors.on_secondary.default.hex }}", bg = "{{ colors.secondary.default.hex }}", modifiers = ["bold"] }
+"ui.statusline.normal" = { fg = "{{ colors.surface.default.hex }}", bg = "{{ colors.outline.default.hex }}", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "{{ colors.on_tertiary.default.hex }}", bg = "{{ colors.tertiary.default.hex }}", modifiers = ["bold"] }
 
 "ui.popup" = { fg = "{{ colors.on_surface.default.hex }}", bg = "none" }
@@ -109,13 +109,13 @@
 
 # Multi-state cursor mappings to completely eliminate anchor/head blending
 "ui.cursor" = { fg = "{{ colors.surface.default.hex }}", bg = "{{ colors.on_surface.default.hex }}" }
-"ui.cursor.normal" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}" }
-"ui.cursor.insert" = { fg = "{{ colors.on_secondary.default.hex }}", bg = "{{ colors.secondary.default.hex }}" }
+"ui.cursor.normal" = { fg = "{{ colors.surface.default.hex }}", bg = "{{ colors.outline.default.hex }}" }
+"ui.cursor.insert" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}" }
 "ui.cursor.select" = { fg = "{{ colors.on_tertiary.default.hex }}", bg = "{{ colors.tertiary.default.hex }}" }
 
 "ui.cursor.primary" = { fg = "{{ colors.surface.default.hex }}", bg = "{{ colors.on_surface.default.hex }}", modifiers = ["bold"] }
-"ui.cursor.primary.normal" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}", modifiers = ["bold"] }
-"ui.cursor.primary.insert" = { fg = "{{ colors.on_secondary.default.hex }}", bg = "{{ colors.secondary.default.hex }}", modifiers = ["bold"] }
+"ui.cursor.primary.normal" = { fg = "{{ colors.surface.default.hex }}", bg = "{{ colors.outline.default.hex }}", modifiers = ["bold"] }
+"ui.cursor.primary.insert" = { fg = "{{ colors.on_primary.default.hex }}", bg = "{{ colors.primary.default.hex }}", modifiers = ["bold"] }
 "ui.cursor.primary.select" = { fg = "{{ colors.on_tertiary.default.hex }}", bg = "{{ colors.tertiary.default.hex }}", modifiers = ["bold"] }
 
 "ui.cursor.match" = { bg = "{{ colors.secondary_container.default.hex }}", modifiers = ["bold"] }

@@ -80,8 +80,8 @@
 "ui.statusline.inactive" = { fg = "#8d9387", bg = "none" }
 
 # High contrast block indicators for modal states
-"ui.statusline.normal" = { fg = "#10380c", bg = "#a4d396", modifiers = ["bold"] }
-"ui.statusline.insert" = { fg = "#263422", bg = "#bbcbb2", modifiers = ["bold"] }
+"ui.statusline.normal" = { fg = "#11140f", bg = "#8d9387", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "#10380c", bg = "#a4d396", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "#00373a", bg = "#a0cfd2", modifiers = ["bold"] }
 
 "ui.popup" = { fg = "#e1e4da", bg = "none" }
@@ -109,13 +109,13 @@
 
 # Multi-state cursor mappings to completely eliminate anchor/head blending
 "ui.cursor" = { fg = "#11140f", bg = "#e1e4da" }
-"ui.cursor.normal" = { fg = "#10380c", bg = "#a4d396" }
-"ui.cursor.insert" = { fg = "#263422", bg = "#bbcbb2" }
+"ui.cursor.normal" = { fg = "#11140f", bg = "#8d9387" }
+"ui.cursor.insert" = { fg = "#10380c", bg = "#a4d396" }
 "ui.cursor.select" = { fg = "#00373a", bg = "#a0cfd2" }
 
 "ui.cursor.primary" = { fg = "#11140f", bg = "#e1e4da", modifiers = ["bold"] }
-"ui.cursor.primary.normal" = { fg = "#10380c", bg = "#a4d396", modifiers = ["bold"] }
-"ui.cursor.primary.insert" = { fg = "#263422", bg = "#bbcbb2", modifiers = ["bold"] }
+"ui.cursor.primary.normal" = { fg = "#11140f", bg = "#8d9387", modifiers = ["bold"] }
+"ui.cursor.primary.insert" = { fg = "#10380c", bg = "#a4d396", modifiers = ["bold"] }
 "ui.cursor.primary.select" = { fg = "#00373a", bg = "#a0cfd2", modifiers = ["bold"] }
 
 "ui.cursor.match" = { bg = "#3c4b37", modifiers = ["bold"] }

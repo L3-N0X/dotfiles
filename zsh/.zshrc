@@ -30,10 +30,19 @@ zdharma-continuum/zinit-annex-bin-gem-node \
 zdharma-continuum/zinit-annex-patch-dl \
 zdharma-continuum/zinit-annex-rust
 
+# Shell enhancements & syntax highlighting
+zinit light zsh-users/zsh-completions
+zinit cdreplay -q
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+
 # ---- ENVIRONMENT VARIABLES & PATHS --------------------------
 export EDITOR=helix
 export VISUAL=helix
 export PATH=$PATH:/home/lenox/.spicetify
+
+export PATH=$HOME/bin:$PATH
 
 export JAVA_HOME=/usr/lib/jvm/default
 
@@ -255,7 +264,7 @@ alias grbi='git rebase -i'
 # Core Utilities & Safety
 alias cp="cp -iv"
 alias mv="mv -iv"
-alias rm="rm -iv"
+alias rm="rm -Iv"
 alias e='$EDITOR'
 alias ee="sudoedit"
 alias cd='z'
@@ -274,10 +283,13 @@ alias valac="nvim ~/.config/alacritty/alacritty.toml"
 alias vthem="nvim ~/.tmux.conf"
 alias stow="/usr/bin/stow --dir /home/lenox/dotfiles --target /home/lenox"
 
+alias clock="tty-clock -D -c"
+
 alias setjava="sudo archlinux-java set"
 
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # Added by Antigravity CLI installer
-export PATH="/home/lenox/.local/bin:$PATH"
 export PATH="/home/lenox/.local/bin:$PATH"
 export PATH="$HOME/.local/share/pnpm:$PATH"
 
@@ -286,3 +298,6 @@ export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
+
+# ESP Rust toolchain (espup)
+[ -f "$HOME/export-esp.sh" ] && source "$HOME/export-esp.sh"

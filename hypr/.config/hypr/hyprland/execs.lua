@@ -18,6 +18,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprland-session.target")
 
     hl.exec_cmd("vicinae server")
+    -- hl.exec_cmd("ledfx")
     hl.exec_cmd("xremap ~/.config/xremap/config.yml --watch=config,device")
 
     hl.exec_cmd("[workspace 1 silent] zen-browser")

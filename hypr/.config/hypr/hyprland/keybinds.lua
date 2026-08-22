@@ -338,7 +338,9 @@ hl.bind("SUPER + ALT + Equal",
 hl.bind("SUPER + L", hl.dsp.exec_cmd("loginctl lock-session"), { description = "Session: Lock" })
 hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("systemctl suspend || loginctl suspend"),
     { locked = true, description = "Session: Sleep" }) -- Sleep
--- hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("systemctl suspend || loginctl suspend"), {locked = true} ) -- # [hidden] Suspend when laptop lid is closed, uncomment if for whatever reason it's not the default behavior
+-- Lid close is handled by systemd-logind (HandleLidSwitch=suspend). Binding it here too
+-- fires a second, redundant `systemctl suspend` on every lid close.
+-- hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("systemctl suspend || loginctl suspend"), {locked = true} ) -- # [hidden]
 
 hl.bind("CTRL + SHIFT + ALT + SUPER + Delete", hl.dsp.exec_cmd("systemctl poweroff || loginctl poweroff"),
     { description = "Session: Shut down" }) -- # [hidden] Power off
@@ -383,4 +385,4 @@ hl.bind("SUPER + End", function()
 end)
 
 -- Noti
-hl.bind("SUPER + B", hl.dsp.exec_cmd("noti"), { description = "App: Notes" })
+hl.bind("SUPER + B", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.local/bin/noti"), { description = "App: Notes" })

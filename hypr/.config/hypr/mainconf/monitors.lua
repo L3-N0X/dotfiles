@@ -1,40 +1,63 @@
+-- Hardware catalogue: one entry per display I own, giving only the things that
+-- are properties of the panel itself (resolution, refresh rate).
+--
+-- Where a display sits, how far it is zoomed and how it is rotated all live in
+-- `monitor_layout.lua`, which `monitorctl` rewrites. Nothing in this file is
+-- script-managed, so it stays hand-editable.
+--
+-- Note the AOC is the display that hangs off HDMI-A-1. It is matched by `desc:`
+-- rather than by connector so that plugging the projector into the same port
+-- does not inherit the AOC's settings.
+
+local layout = require("mainconf.monitor_layout")
+
 local monitors = {
-    {
-        output = "desc:AOC 2475W MDMHAJA004705",
-        width = 1920,
-        height = 1080,
-        hz = 60,
-        -- transform = 1,
-    },
-    { output = "eDP-1",                                width = 1920, height = 1080, hz = 144, scale = 1.25 },
-    { output = "HDMI-A-1",                             width = 1920, height = 1080, hz = 60,  scale = 1 },
-    { output = "desc:Synaptics Inc Non-PnP 0x00BC614", width = 1920, height = 1080, hz = 60,  scale = 1.5 },
+    { output = "eDP-1",                                width = 1920, height = 1080, hz = 144 },
+    { output = "desc:AOC 2475W MDMHAJA004705",         width = 1920, height = 1080, hz = 60 },
+    { output = "desc:Synaptics Inc Non-PnP 0x00BC614", width = 1920, height = 1080, hz = 60 },
     -- desc:Ancor Communications Inc ASUS VS247 F8LMTF10236
 }
 
-local offset_x = 0
+local auto_position = {
+    left  = "auto-left",
+    right = "auto-right",
+    up    = "auto-up",
+    down  = "auto-down",
+}
+
+-- Build the set of outputs to emit a rule for: everything in the catalogue,
+-- plus anything the layout file knows about that the catalogue does not. That
+-- lets monitorctl register a newly seen display without editing this file.
+local outputs, seen = {}, {}
+local function add_output(output, mode)
+    if output == nil or seen[output] then return end
+    seen[output] = true
+    table.insert(outputs, { output = output, mode = mode or "preferred" })
+end
 
 for _, m in ipairs(monitors) do
-    local transform = m.transform or 0
-    local layout_scale = m.scale or 1 -- Lua-only fallback; not sent to Hyprland
+    add_output(m.output, m.width .. "x" .. m.height .. "@" .. m.hz)
+end
+add_output(layout.anchor)
+for output in pairs(layout.side) do add_output(output) end
+for output in pairs(layout.zoom) do add_output(output) end
 
-    local rule = {
-        output = m.output,
-        mode = m.width .. "x" .. m.height .. "@" .. m.hz,
-        position = math.floor(offset_x) .. "x0",
-        transform = transform,
-    }
-
-    -- Add `scale` only when the monitor defines one.
-    if m.scale ~= nil then
-        rule.scale = m.scale
+for _, m in ipairs(outputs) do
+    -- The anchor is pinned at the origin; Hyprland then resolves `auto-*` for
+    -- everything else against whatever is actually connected. That keeps the
+    -- layout gap-free no matter which subset of these displays is plugged in.
+    local position = "0x0"
+    if m.output ~= layout.anchor then
+        position = auto_position[layout.side[m.output]] or "auto-right"
     end
 
-    hl.monitor(rule)
-
-    local rotated = transform == 1 or transform == 3
-    local logical_width = (rotated and m.height or m.width) / layout_scale
-    offset_x = offset_x + logical_width
+    hl.monitor({
+        output    = m.output,
+        mode      = m.mode,
+        position  = position,
+        scale     = layout.zoom[m.output] or 1,
+        transform = layout.transform[m.output] or 0,
+    })
 end
 
 -- Fallback for any other monitor plugged in

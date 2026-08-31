@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
+  "name": "monitor-control",
+  "title": "Monitor Control",
+  "description": "Reposition, zoom and rotate Hyprland displays, saving the result to monitor_layout.lua",
+  "icon": "extension_icon.png",
+  "author": "lenox",
+  "license": "MIT",
+  "categories": ["System"],
+  "keywords": ["hyprland", "monitor", "display", "zoom", "scale"],
+  "commands": [
+    {
+      "name": "monitors",
+      "title": "Monitor Layout",
+      "subtitle": "Hyprland",
+      "description": "Move displays left or right, change their zoom, and rotate them",
+      "mode": "view"
+    },
+    {
+      "name": "swap-sides",
+      "title": "Swap Monitor Sides",
+      "subtitle": "Hyprland",
+      "description": "Flip the external display to the other side of the laptop",
+      "mode": "no-view"
+    }
+  ],
+  "scripts": {
+    "build": "vici build",
+    "dev": "vici develop",
+    "lint": "vici lint"
+  },
+  "dependencies": {
+    "@vicinae/api": "^0.27.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "19.1.17",
+    "typescript": "^5.9.2"
+  }
+}

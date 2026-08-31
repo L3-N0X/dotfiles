@@ -67,6 +67,10 @@ Singleton {
                 property int tabIndex: 0
             }
 
+            property JsonObject macroCheatsheet: JsonObject {
+                property int tabIndex: 0
+            }
+
             property JsonObject sidebar: JsonObject {
                 property JsonObject bottomGroup: JsonObject {
                     property bool collapsed: false

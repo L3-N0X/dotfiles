@@ -21,7 +21,7 @@ hl.on("hyprland.start", function()
     -- hl.exec_cmd("ledfx")
     hl.exec_cmd("xremap ~/.config/xremap/config.yml --watch=config,device")
 
-    hl.exec_cmd("[workspace 1 silent] zen-browser")
+    hl.exec_cmd("[workspace 1 silent] helium-browser")
     hl.exec_cmd("[workspace 2 silent] chatterino")
     hl.exec_cmd("vesktop --start-minimized")
     -- hl.exec_cmd("[workspace 7 silent] thunderbird")

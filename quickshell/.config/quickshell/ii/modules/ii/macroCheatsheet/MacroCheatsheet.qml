@@ -13,24 +13,14 @@ import Quickshell.Hyprland
 
 Scope { // Scope
     id: root
-    property var tabButtonList: [
-        {
-            "icon": "keyboard",
-            "name": Translation.tr("Keybinds")
-        },
-        {
-            "icon": "experiment",
-            "name": Translation.tr("Elements")
-        },
-    ]
 
     Loader {
-        id: cheatsheetLoader
+        id: macroCheatsheetLoader
         active: false
 
         sourceComponent: PanelWindow { // Window
-            id: cheatsheetRoot
-            visible: cheatsheetLoader.active
+            id: macroCheatsheetRoot
+            visible: macroCheatsheetLoader.active
 
             anchors {
                 top: true
@@ -40,50 +30,50 @@ Scope { // Scope
             }
 
             function hide() {
-                cheatsheetLoader.active = false;
+                macroCheatsheetLoader.active = false;
             }
             exclusiveZone: 0
-            implicitWidth: cheatsheetBackground.width + Appearance.sizes.elevationMargin * 2
-            implicitHeight: cheatsheetBackground.height + Appearance.sizes.elevationMargin * 2
-            WlrLayershell.namespace: "quickshell:cheatsheet"
+            implicitWidth: macroCheatsheetBackground.width + Appearance.sizes.elevationMargin * 2
+            implicitHeight: macroCheatsheetBackground.height + Appearance.sizes.elevationMargin * 2
+            WlrLayershell.namespace: "quickshell:macroCheatsheet"
             WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
             color: "transparent"
 
             mask: Region {
-                item: cheatsheetBackground
+                item: macroCheatsheetBackground
             }
 
             Component.onCompleted: {
-                GlobalFocusGrab.addDismissable(cheatsheetRoot);
+                GlobalFocusGrab.addDismissable(macroCheatsheetRoot);
             }
             Component.onDestruction: {
-                GlobalFocusGrab.removeDismissable(cheatsheetRoot);
+                GlobalFocusGrab.removeDismissable(macroCheatsheetRoot);
             }
             Connections {
                 target: GlobalFocusGrab
                 function onDismissed() {
-                    cheatsheetRoot.hide();
+                    macroCheatsheetRoot.hide();
                 }
             }
 
             // Background
             StyledRectangularShadow {
-                target: cheatsheetBackground
+                target: macroCheatsheetBackground
             }
             Rectangle {
-                id: cheatsheetBackground
+                id: macroCheatsheetBackground
                 anchors.centerIn: parent
                 color: Appearance.colors.colLayer0
                 border.width: 1
                 border.color: Appearance.colors.colLayer0Border
                 radius: Appearance.rounding.windowRounding
                 property real padding: 20
-                implicitWidth: cheatsheetColumnLayout.implicitWidth + padding * 2
-                implicitHeight: cheatsheetColumnLayout.implicitHeight + padding * 2
+                implicitWidth: macroCheatsheetColumnLayout.implicitWidth + padding * 2
+                implicitHeight: macroCheatsheetColumnLayout.implicitHeight + padding * 2
 
                 Keys.onPressed: event => { // Esc to close
                     if (event.key === Qt.Key_Escape) {
-                        cheatsheetRoot.hide();
+                        macroCheatsheetRoot.hide();
                     }
                     if (event.modifiers === Qt.ControlModifier) {
                         if (event.key === Qt.Key_PageDown) {
@@ -93,10 +83,10 @@ Scope { // Scope
                             tabBar.decrementCurrentIndex();
                             event.accepted = true;
                         } else if (event.key === Qt.Key_Tab) {
-                            tabBar.setCurrentIndex((tabBar.currentIndex + 1) % root.tabButtonList.length);
+                            tabBar.setCurrentIndex((tabBar.currentIndex + 1) % MacroKeyboardLayers.layers.length);
                             event.accepted = true;
                         } else if (event.key === Qt.Key_Backtab) {
-                            tabBar.setCurrentIndex((tabBar.currentIndex - 1 + root.tabButtonList.length) % root.tabButtonList.length);
+                            tabBar.setCurrentIndex((tabBar.currentIndex - 1 + MacroKeyboardLayers.layers.length) % MacroKeyboardLayers.layers.length);
                             event.accepted = true;
                         }
                     }
@@ -104,7 +94,7 @@ Scope { // Scope
 
                 RippleButton { // Close button
                     id: closeButton
-                    focus: cheatsheetRoot.visible
+                    focus: macroCheatsheetRoot.visible
                     implicitWidth: 40
                     implicitHeight: 40
                     buttonRadius: Appearance.rounding.full
@@ -116,7 +106,7 @@ Scope { // Scope
                     }
 
                     onClicked: {
-                        cheatsheetRoot.hide();
+                        macroCheatsheetRoot.hide();
                     }
 
                     contentItem: MaterialSymbol {
@@ -128,7 +118,7 @@ Scope { // Scope
                 }
 
                 ColumnLayout { // Real content
-                    id: cheatsheetColumnLayout
+                    id: macroCheatsheetColumnLayout
                     anchors.centerIn: parent
                     spacing: 10
 
@@ -137,7 +127,10 @@ Scope { // Scope
                         enableShadow: false
                         ToolbarTabBar {
                             id: tabBar
-                            tabButtonList: root.tabButtonList
+                            tabButtonList: MacroKeyboardLayers.layers.map(layer => ({
+                                "icon": "dialpad",
+                                "name": layer.name
+                            }))
 
                             Synchronizer on currentIndex {
                                 property alias source: swipeView.currentIndex
@@ -151,9 +144,9 @@ Scope { // Scope
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         spacing: 10
-                        currentIndex: Persistent.states.cheatsheet.tabIndex
+                        currentIndex: Persistent.states.macroCheatsheet.tabIndex
                         onCurrentIndexChanged: {
-                            Persistent.states.cheatsheet.tabIndex = currentIndex;
+                            Persistent.states.macroCheatsheet.tabIndex = currentIndex;
                         }
 
                         implicitWidth: Math.max.apply(null, contentChildren.map(child => child.implicitWidth || 0))
@@ -169,8 +162,13 @@ Scope { // Scope
                             }
                         }
 
-                        CheatsheetKeybinds {}
-                        CheatsheetPeriodicTable {}
+                        Repeater {
+                            model: MacroKeyboardLayers.layers
+                            delegate: MacroCheatsheetLayer {
+                                required property var modelData
+                                layerData: modelData
+                            }
+                        }
                     }
                 }
             }
@@ -178,45 +176,45 @@ Scope { // Scope
     }
 
     IpcHandler {
-        target: "cheatsheet"
+        target: "macroCheatsheet"
 
         function toggle(): void {
-            cheatsheetLoader.active = !cheatsheetLoader.active;
+            macroCheatsheetLoader.active = !macroCheatsheetLoader.active;
         }
 
         function close(): void {
-            cheatsheetLoader.active = false;
+            macroCheatsheetLoader.active = false;
         }
 
         function open(): void {
-            cheatsheetLoader.active = true;
+            macroCheatsheetLoader.active = true;
         }
     }
 
     GlobalShortcut {
-        name: "cheatsheetToggle"
-        description: "Toggles cheatsheet on press"
+        name: "macroCheatsheetToggle"
+        description: "Toggles macro keyboard cheatsheet on press"
 
         onPressed: {
-            cheatsheetLoader.active = !cheatsheetLoader.active;
+            macroCheatsheetLoader.active = !macroCheatsheetLoader.active;
         }
     }
 
     GlobalShortcut {
-        name: "cheatsheetOpen"
-        description: "Opens cheatsheet on press"
+        name: "macroCheatsheetOpen"
+        description: "Opens macro keyboard cheatsheet on press"
 
         onPressed: {
-            cheatsheetLoader.active = true;
+            macroCheatsheetLoader.active = true;
         }
     }
 
     GlobalShortcut {
-        name: "cheatsheetClose"
-        description: "Closes cheatsheet on press"
+        name: "macroCheatsheetClose"
+        description: "Closes macro keyboard cheatsheet on press"
 
         onPressed: {
-            cheatsheetLoader.active = false;
+            macroCheatsheetLoader.active = false;
         }
     }
 }

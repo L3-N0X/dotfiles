@@ -180,6 +180,13 @@ hl.window_rule({
     suppress_event = "activate activatefocus"
 })
 
+hl.window_rule({
+    match = { class = "affinity.exe" },
+    no_follow_mouse = true,
+    focus_on_activate = false,
+    suppress_event = "activate activatefocus"
+})
+
 -- hl.window_rule({
 --     match = {
 --         class = "^com%.mojang%.minecraft$"

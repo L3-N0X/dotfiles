@@ -53,7 +53,7 @@ output_path = '~/.config/vesktop/themes/matugen.css'
 [templates.tmux]
 input_path = '~/.config/matugen/templates/tmux/tmux.conf'
 output_path = '~/.config/tmux/matugen-colors.conf'
-post_hook = 'tmux source-file ~/.config/tmux/matugen-colors.conf'
+post_hook = 'tmux source-file ~/.config/tmux/matugen-colors.conf 2>/dev/null || true'
 
 [templates.herdr]
 input_path = '~/.config/matugen/templates/herdr/config.toml'
@@ -76,7 +76,7 @@ post_hook = 'pkill -USR2 btop || true'
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
 output_path = '~/.config/cava/themes/matugen'
-post_hook = 'pkill -USR1 cava'
+post_hook = 'pkill -USR1 cava || true'
 
 [templates.helix]
 input_path = '~/.config/matugen/templates/helix/matugen.toml'
@@ -85,7 +85,7 @@ output_path = '~/.config/helix/themes/matugen.toml'
 [templates.neovim]
 input_path = '~/.config/matugen/templates/neovim/matugen.lua'
 output_path = '~/.config/nvim/matugen.lua'
-post_hook = 'pkill -SIGUSR1 nvim'
+post_hook = 'pkill -SIGUSR1 nvim || true'
 
 [templates.opencode]
 input_path = '~/.config/matugen/templates/opencode.json'

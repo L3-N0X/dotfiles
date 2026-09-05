@@ -12,6 +12,15 @@ SHELL_CONFIG_FILE="$XDG_CONFIG_HOME/illogical-impulse/config.json"
 MATUGEN_DIR="$XDG_CONFIG_HOME/matugen"
 terminalscheme="$SCRIPT_DIR/terminal/scheme-base.json"
 
+# Serialize invocations. Every entry point (bar buttons, quick toggles, keybinds)
+# calls this detached, so two runs can overlap and interleave their writes to the
+# shared intermediates (material_colors.scss, config.json), leaving the theme
+# half-applied. Re-exec once under flock; the env var guards against recursion.
+if [[ -z "$SWITCHWALL_LOCKED" ]]; then
+    export SWITCHWALL_LOCKED=1
+    exec flock -w 60 "${XDG_RUNTIME_DIR:-/tmp}/switchwall.lock" "$0" "$@"
+fi
+
 handle_kde_material_you_colors() {
     # Check if Qt app theming is enabled in config
     if [ -f "$SHELL_CONFIG_FILE" ]; then

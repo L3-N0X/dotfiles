@@ -289,9 +289,6 @@ alias setjava="sudo archlinux-java set"
 
 eval "$(fnm env --use-on-cd --shell zsh)"
 
-# DISABLES CLAUDE UPDATES - REMOVE LATER
-export DISABLE_AUTOUPDATER=1
-
 # Added by Antigravity CLI installer
 export PATH="/home/lenox/.local/bin:$PATH"
 export PATH="$HOME/.local/share/pnpm:$PATH"
